@@ -1,0 +1,12 @@
+@import '../../styles/mixins';
+
+:host {
+  @include typography(base, bold);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

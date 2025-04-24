@@ -1,0 +1,11 @@
+@import './variables';
+@import './typography';
+@import './mixins';
+
+// Applichiamo la tipografia di default al body
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  margin: 0;
+}

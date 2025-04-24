@@ -1,1 +1,3 @@
-<p>cwd-button works!</p>
+<button [class.primary]="type === 'primary'" [class.secondary]="type === 'secondary'" [disabled]="disabled">
+    <ng-content></ng-content>
+</button>

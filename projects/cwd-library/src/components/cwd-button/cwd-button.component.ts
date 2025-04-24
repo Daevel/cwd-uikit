@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-cwd-button',
+  selector: 'cwd-button',
   imports: [],
   templateUrl: './cwd-button.component.html',
-  styleUrl: './cwd-button.component.css'
+  styleUrl: './cwd-button.component.scss'
 })
 export class CwdButtonComponent {
-
+  @Input() type: 'primary' | 'secondary' = 'primary';
+  @Input() disabled = false;
 }
