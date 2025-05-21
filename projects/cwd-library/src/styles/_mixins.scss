@@ -1,7 +1,0 @@
-@mixin typography($size, $weight: regular) {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-#{$size});
-    font-weight: var(--font-weight-#{$weight});
-    line-height: 1.5;
-  }
-  

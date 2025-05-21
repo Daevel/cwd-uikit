@@ -7,6 +7,4 @@ import { Component, Input } from '@angular/core';
   styleUrl: './cwd-button.component.scss'
 })
 export class CwdButtonComponent {
-  @Input() type: 'primary' | 'secondary' = 'primary';
-  @Input() disabled = false;
 }
