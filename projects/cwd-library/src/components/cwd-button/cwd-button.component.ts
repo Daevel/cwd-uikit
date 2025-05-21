@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'cwd-button',
@@ -7,4 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrl: './cwd-button.component.scss'
 })
 export class CwdButtonComponent {
+
+  @Output() click = new EventEmitter<MouseEvent>();
+
+
+  public onClick(event: MouseEvent) {
+    this.click.emit(event);
+  }
+
+
 }

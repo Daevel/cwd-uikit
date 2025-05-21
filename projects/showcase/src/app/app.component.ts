@@ -10,4 +10,9 @@ import { CwdButtonComponent } from 'cwd-library';
 })
 export class AppComponent {
   title = 'showcase';
+
+  handleResponse() {
+    console.log("prova click");
+  }
+
 }
