@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'cwd-input',
-  imports: [],
   templateUrl: './cwd-input.component.html',
-  styleUrl: './cwd-input.component.scss'
+  styleUrls: ['./cwd-input.component.scss'],
+  standalone: true,
+  imports: [NgIf, FormsModule]
 })
 export class CwdInputComponent {
-
+  @Input() label: string = '';
+  @Input() ariaLabel: string = '';
+  @Input() hint: string = '';
+  @Input() type: string = 'text';
+  @Input() placeholder: string = '';
+  @Input() model: any;
+  @Output() modelChange = new EventEmitter<any>();
 }

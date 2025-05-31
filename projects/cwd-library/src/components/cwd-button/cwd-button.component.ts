@@ -4,7 +4,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'cwd-button',
   imports: [],
   templateUrl: './cwd-button.component.html',
-  styleUrl: './cwd-button.component.scss'
+  styleUrl: './cwd-button.component.scss',
+  standalone: true
 })
 export class CwdButtonComponent {
 
@@ -14,6 +15,8 @@ export class CwdButtonComponent {
   public onClick(event: MouseEvent) {
     this.click.emit(event);
   }
+
+
 
 
 }

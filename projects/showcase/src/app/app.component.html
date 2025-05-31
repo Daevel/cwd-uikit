@@ -1,10 +1,30 @@
-<div class="container">
-  <h1 style="color: white"> Pulsanti della libreria Code With Daevel </h1>
-  <div class="custom-button-container">
-    <cwd-button (click)="handleResponse()">Tasto 1</cwd-button>
-    <cwd-button (click)="handleResponse()">Tasto 2</cwd-button>
-    <cwd-button (click)="handleResponse()">Tasto 3</cwd-button>
+<cwd-card>
+  <h2>Card di esempio</h2>
+  <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+  <cwd-button (click)="handleResponse()">Azione della Card</cwd-button>
+  <cwd-input
+  label="Email"
+  [(model)]="testoDiProva"
+  hint="Inserisci la tua email"
+  type="email"
+  placeholder="esempio@email.com">
+  </cwd-input>
+  <p>Valore attuale: {{ testoDiProva }}</p>
+</cwd-card>
+
+<cwd-card>
+  <div card-header>
+    <h3>Grande</h3>
   </div>
-</div>
-
-
+  <div card-body>
+    <p>Questa è una card Grande.</p>
+  </div>
+  <div card-footer>
+    <cwd-input label="Email" ariaLabel="Campo email obbligatorio" hint="Inserisci la tua email" type="email"
+      placeholder="esempio@email.com">
+    </cwd-input>
+    <cwd-input label="Password" ariaLabel="Campo password obbligatorio" hint="Inserisci la tua password" type="password"
+      placeholder="esempio@email.com">
+    </cwd-input>
+  </div>
+</cwd-card>

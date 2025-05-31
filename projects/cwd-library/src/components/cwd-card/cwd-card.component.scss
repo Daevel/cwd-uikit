@@ -1,0 +1,19 @@
+.card {
+  background: #fffbe6;
+  font-family: "Inter", sans-serif;
+  border: 3px solid #fbca1f;
+  border-radius: 0.7em;
+  box-shadow: 0.2em 0.2em #00000022;
+  font-size: 1rem;
+  color: #222;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 1em 0;
+  // Default size (medium)
+  padding: 1.5em 1.2em;
+  max-width: 400px;
+}
+
+.card:hover {
+  transform: translate(-0.07em, -0.07em) scale(1.01);
+  box-shadow: 0.3em 0.3em #00000033;
+}

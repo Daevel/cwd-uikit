@@ -1,1 +1,20 @@
-<input type="text"><ng-content></ng-content>
+<label class="cwd-input-label" *ngIf="label">
+  <span>{{ label }}</span>
+  <input
+    [type]="type || 'text'"
+    [attr.aria-label]="ariaLabel || label"
+    [attr.placeholder]="placeholder"
+    [ngModel]="model"
+    (ngModelChange)="modelChange.emit($event)"
+  />
+</label>
+<input
+  *ngIf="!label"
+  class="cwd-input-no-label"
+  [type]="type || 'text'"
+  [attr.aria-label]="ariaLabel"
+  [attr.placeholder]="placeholder"
+  [ngModel]="model"
+  (ngModelChange)="modelChange.emit($event)"
+/>
+<span class="cwd-input-hint" *ngIf="hint">{{ hint }}</span>

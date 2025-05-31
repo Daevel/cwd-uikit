@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CwdButtonComponent } from 'cwd-library';
+import { CwdButtonComponent, CwdCardComponent, CwdInputComponent } from 'cwd-library';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CwdButtonComponent],
+  imports: [RouterOutlet,CwdCardComponent,CwdButtonComponent,CwdInputComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  standalone: true
 })
 export class AppComponent {
   title = 'showcase';
 
+  public testoDiProva: string = "";
+
   handleResponse() {
-    console.log("prova click");
+    this.testoDiProva = "prova";
   }
 
 }
