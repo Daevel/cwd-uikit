@@ -1,7 +1,7 @@
 <cwd-card>
   <h2>Card di esempio</h2>
   <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-  <cwd-button (click)="handleResponse()">Azione della Card</cwd-button>
+  <cwd-button (click)="handleResponse()" iconName="coffee">Azione della Card</cwd-button>
   <cwd-input
   label="Email"
   [(model)]="testoDiProva"
@@ -27,4 +27,10 @@
       placeholder="esempio@email.com">
     </cwd-input>
   </div>
+  </cwd-card>
+
+  <cwd-card>
+  <cwd-icon iconName="coffee"></cwd-icon>
+  <cwd-icon iconName="user"></cwd-icon>
 </cwd-card>
+

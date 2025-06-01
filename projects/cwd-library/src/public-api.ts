@@ -3,4 +3,6 @@
  */
 export * from './components/cwd-button/cwd-button.component';
 export * from './components/cwd-input/cwd-input.component';
-export * from './components/cwd-card/cwd-card.component'
+export * from './components/cwd-card/cwd-card.component';
+export * from './components/cwd-icon/cwd-icon.component';
+export * from './icons/uikit.providers';

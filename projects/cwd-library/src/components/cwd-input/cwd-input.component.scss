@@ -9,6 +9,15 @@
   gap: 0.3em;
 }
 
+.cwd-input-hint {
+  display: block;
+  font-size: 0.7rem;
+  color: #b89c0f;
+  margin-top: 0.2em;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -45,11 +54,3 @@ input[type="number"]:focus {
   transform: translate(0.05em, 0.05em);
 }
 
-.cwd-input-hint {
-  display: block;
-  font-size: 0.92rem;
-  color: #b89c0f;
-  margin-top: 0.2em;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-}
