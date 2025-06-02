@@ -1,0 +1,41 @@
+<h1>Showcase</h1>
+
+<cwd-card>
+    <h2>Card di esempio</h2>
+    <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+    <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
+    <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
+        placeholder="esempio@email.com">
+    </cwd-input>
+    <p>Valore attuale: {{ testoDiProva }}</p>
+</cwd-card>
+
+<cwd-card>
+    <div card-header>
+        <h3>Grande</h3>
+    </div>
+    <div card-body>
+        <p>Questa è una card Grande.</p>
+    </div>
+    <div card-footer>
+        <cwd-input label="Email" ariaLabel="Campo email obbligatorio" hint="Inserisci la tua email" type="email"
+            placeholder="esempio@email.com">
+        </cwd-input>
+        <cwd-input label="Password" ariaLabel="Campo password obbligatorio" hint="Inserisci la tua password"
+            type="password" placeholder="esempio@email.com">
+        </cwd-input>
+    </div>
+</cwd-card>
+
+<cwd-card>
+    <cwd-icon iconName="coffee"></cwd-icon>
+    <cwd-icon iconName="user"></cwd-icon>
+    <cwd-icon iconName="check"></cwd-icon>
+    <cwd-icon iconName="timeline"></cwd-icon>
+    <cwd-icon iconName="levelUpAlt"></cwd-icon>
+</cwd-card>
+
+<cwd-button (click)="mostraPopup()" iconName="message">
+    Mostra popup
+</cwd-button>
+ <cwd-fab icon="xmark"></cwd-fab>

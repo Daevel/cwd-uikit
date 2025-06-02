@@ -1,0 +1,48 @@
+.cwd-toast {
+  position: fixed;
+  right: 2em;
+  top: 2em;
+  max-width: 400px;
+  background: #fffbe6;
+  border: 3px solid #fbca1f;
+  border-radius: 0.7em;
+  box-shadow: 0.2em 0.2em #00000022;
+  font-family: "Inter", sans-serif;
+  color: #222;
+  padding: 1.5em 1.2em 1.2em 1.2em;
+  z-index: 9999;
+  transition: box-shadow 0.2s, transform 0.2s, opacity 0.3s;
+  padding-top: 1.2em;
+}
+
+.cwd-toast-close-wrapper {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+
+  .cwd-fab {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    min-width: 32px;
+    min-height: 32px;
+    box-shadow: none;
+    background: transparent;
+    color: #222;
+    border: none;
+    padding: 0;
+  }
+}
+
+.cwd-toast-body {
+  margin-top: 1.5em;
+  padding: 0.5em 0.2em 0.2em 0.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.cwd-toast.hide {
+  opacity: 0;
+  pointer-events: none;
+}
