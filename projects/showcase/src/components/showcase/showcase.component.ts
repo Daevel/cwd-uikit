@@ -22,4 +22,8 @@ export class ShowcaseComponent {
     this.toastService.toastSuccess("Operazione riuscita");
   }
 
+  onCloseClick() {
+    this.testoDiProva = "";
+  }
+
 }

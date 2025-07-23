@@ -1,3 +1,12 @@
+:host-context([card-body]) {
+  display: block;
+  margin-top: 1rem;
+}
+
+:host-context([card-body]):first-child {
+  margin-top: 0;
+}
+
 .cwd-input-label {
   display: flex;
   flex-direction: column;

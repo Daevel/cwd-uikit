@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .card {
   background: #fffbe6;
   font-family: "Inter", sans-serif;
@@ -11,6 +15,49 @@
   // Default size (medium)
   padding: 1.5em 1.2em;
   max-width: 400px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  justify-content: space-between;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2em;
+  margin-left: auto;
+}
+
+.card-body {
+  margin-bottom: 2em;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-footer > [card-footer] {
+  display: flex;                
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  width: 100%;             
+}
+
+::ng-deep [card-footer] {
+  display: flex;
+  justify-content: flex-end;
+}
+
+::ng-deep [card-footer] > cwd-button:not(:first-child) {
+  margin-left: 0.5rem;
 }
 
 .card:hover {

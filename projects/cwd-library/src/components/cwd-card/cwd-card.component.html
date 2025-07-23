@@ -1,9 +1,10 @@
 <div class="card">
   <div class="card-header">
     <ng-content select="[card-header]"></ng-content>
+    <cwd-button class="cwd-fab" (click)="onCloseClick()" iconName="times"></cwd-button>
   </div>
   <div class="card-body">
-    <ng-content></ng-content>
+    <ng-content select="[card-body]"></ng-content>
   </div>
   <div class="card-footer">
     <ng-content select="[card-footer]"></ng-content>
