@@ -1,17 +1,72 @@
-<h1>Showcase</h1>
+<!-- <h1>Showcase</h1> -->
 
-<cwd-card>
-    <h2>Card di esempio</h2>
-    <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-    <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-    <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-        placeholder="esempio@email.com">
-    </cwd-input>
-    <p>Valore attuale: {{ testoDiProva }}</p>
+<cwd-card color="primary" size="small">
+    <div card-header>
+        <h2>Card di esempio</h2>
+    </div>
+    <div card-body>
+        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
+            placeholder="esempio@email.com">
+        </cwd-input>
+        <p>Valore attuale: {{ testoDiProva }}</p>
+    </div>
+    <div card-footer>
+        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
+    </div>
 </cwd-card>
 
-<cwd-card [closeButton]="true" (close)="onCloseClick()">
-    <div card-header >
+<cwd-card color="secondary" size="medium">
+    <div card-header>
+        <h2>Card di esempio</h2>
+    </div>
+    <div card-body>
+        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
+            placeholder="esempio@email.com">
+        </cwd-input>
+        <p>Valore attuale: {{ testoDiProva }}</p>
+    </div>
+    <div card-footer>
+        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
+    </div>
+</cwd-card>
+
+<cwd-card color="warn" size="big">
+    <div card-header>
+        <h2>Card di esempio</h2>
+    </div>
+    <div card-body>
+        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
+            placeholder="esempio@email.com">
+        </cwd-input>
+        <p>Valore attuale: {{ testoDiProva }}</p>
+    </div>
+    <div card-footer>
+        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
+    </div>
+</cwd-card>
+
+<cwd-card color="default" size="medium">
+    <div card-header>
+        <h2>Card di esempio</h2>
+    </div>
+    <div card-body>
+        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
+        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
+            placeholder="esempio@email.com">
+        </cwd-input>
+        <p>Valore attuale: {{ testoDiProva }}</p>
+    </div>
+    <div card-footer>
+        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
+    </div>
+</cwd-card>
+
+<!-- 
+<cwd-card color="primary">
+    <div card-header>
         <h3>Grande</h3>
     </div>
     <div card-body>
@@ -40,5 +95,4 @@
 <cwd-button (click)="mostraPopup()" iconName="message">
     Mostra popup
 </cwd-button>
- <cwd-fab icon="xmark"></cwd-fab>
- <cwd-fab icon="times" (click)="onCloseClick()"></cwd-fab>
+<cwd-fab icon="xmark"></cwd-fab> -->

@@ -7,9 +7,12 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "target": "ES2022",
     "types": []
   },
   "exclude": [
-    "**/*.spec.ts"
-  ]
+    "**/*.spec.ts",
+    "**/*.stories.ts"
+  ],
+  "include": ["**/*.ts"]
 }

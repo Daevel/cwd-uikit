@@ -26,7 +26,6 @@ export class CwdIconComponent implements OnChanges {
       } else {
         this.icon = undefined;
       }
-      console.log('Icona richiesta:', iconKey, this.icon);
     }
   }
 }

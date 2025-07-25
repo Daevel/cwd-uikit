@@ -7,11 +7,12 @@
       "projectType": "library",
       "root": "projects/cwd-library",
       "sourceRoot": "projects/cwd-library/src",
-      "prefix": "lib",
+      "prefix": "cwd",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
+            "tsConfig": "projects/cwd-library/tsconfig.lib.json",
             "project": "projects/cwd-library/ng-package.json"
           },
           "configurations": {
