@@ -1,15 +1,17 @@
+@import '../../styles.scss';
+
 .cwd-toast {
   position: fixed;
   right: 2em;
   top: 2em;
   max-width: 400px;
   background: #fffbe6;
-  border: 3px solid #fbca1f;
+  border: 3px solid $color-primary;
   border-radius: 0.7em;
   box-shadow: 0.2em 0.2em #00000022;
-  font-family: "Inter", sans-serif;
-  color: #222;
-  padding: 1.5em 1.2em 1.2em 1.2em;
+  font-family: $font-family-base;
+  color: $color-text;
+  padding: 2.5em 1.2em 1.2em 1.2em;
   z-index: 9999;
   transition: box-shadow 0.2s, transform 0.2s, opacity 0.3s;
   padding-top: 1.2em;
@@ -17,20 +19,21 @@
 
 .cwd-toast-close-wrapper {
   position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+  top: -0.8em;
+  right: -0.8em;
 
   .cwd-fab {
-    width: 32px;
-    height: 32px;
-    font-size: 1.1rem;
-    min-width: 32px;
-    min-height: 32px;
-    box-shadow: none;
-    background: transparent;
-    color: #222;
-    border: none;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    min-width: 28px;
+    min-height: 28px;
+    background: $color-surface;
+    border: 2px solid $color-primary;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     padding: 0;
+    line-height: 1;
   }
 }
 

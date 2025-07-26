@@ -1,3 +1,5 @@
+@import '../../styles';
+
 :host-context([card-body]) {
   display: block;
   margin-top: 1rem;
@@ -7,35 +9,52 @@
   margin-top: 0;
 }
 
+.cwd-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
 .cwd-input-label {
   display: flex;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
   margin-bottom: 0.3em;
-  color: #222;
+  color: $color-text;
   gap: 0.3em;
 }
 
 .cwd-input-hint {
-  display: block;
-  font-size: 0.7rem;
-  color: #b89c0f;
-  margin-top: 0.2em;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
+  opacity: 0;
+  max-height: 0;
+  font-family: $font-family-base;;
+  font-size: $font-size-hint;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  pointer-events: none;
 }
+
+.cwd-input-wrapper.focused .cwd-input-hint {
+  opacity: 1;
+  max-height: 40px;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
   background: #fffbe6;
-  font-family: "Inter", sans-serif;
+  font-family: $font-family-base;
   padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
+  font-weight: $font-weight-heavy;
+  font-size: $font-size-base;
   border: 3px solid #fbca1f;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em #00000022;

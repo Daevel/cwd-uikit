@@ -1,53 +1,37 @@
+@import '../../styles';
+
 :host {
   display: block;
-
-  --card-primary-bg: var(--color-primary);
-  --card-primary-border: var(--color-primary-contrast);
-  --card-primary-text: #fff;
-
-  --card-accent-bg: var(--color-accent);
-  --card-accent-border: var(--color-secondary-contrast);
-  --card-accent-text: #fff;
-
-  --card-warn-bg: var(--color-warn);
-  --card-warn-border: var(--color-warn-contrast);
-  --card-warn-text: #fff;
-
-  --card-neutral-bg: var(--color-surface);
-  --card-neutral-border: var(--color-border);
-  --card-neutral-text: var(--color-text);
 }
 
 .card {
-  // default (neutral)
-  background-color: var(--cwd-card-bg-default);
-  color: var(--cwd-card-text-default);
+  background-color: $card-neutral-bg;
+  color: $card-neutral-text;
   border-radius: 0.7em;
-  border: 3px solid var(--card-primary-border);
+  border: 3px solid $card-primary-border;
   box-shadow: 0.2em 0.2em #00000022;
   transition: box-shadow 0.2s, transform 0.2s;
   margin: 1em 0;
 
   &.cwd-card--primary {
-    background-color: var(--card-primary-bg);
-    border-color: var(--card-primary-border);
-    color: var(--card-primary-text);
+    background-color: $card-primary-bg;
+    border-color: $card-primary-border;
+    color: $card-primary-text;
   }
 
   &.cwd-card--accent {
-    background-color: var(--card-accent-bg);
-    border-color: var(--card-accent-border);
-    color: var(--card-accent-text);
+    background-color: $card-accent-bg;
+    border-color: $card-accent-border;
+    color: $card-accent-text;
   }
 
   &.cwd-card--warn {
-    background-color: var(--card-warn-bg);
-    border-color: var(--card-warn-border);
-    color: var(--card-warn-text);
+    background-color: $card-warn-bg;
+    border-color: $card-warn-border;
+    color: $card-warn-text;
   }
 
-  // dimensioni base, overrideabili
-  padding: var(--cwd-card-padding, 1rem);
+  padding: 1rem;
   font-size: 1rem;
 
   &.cwd-card--small {
@@ -67,11 +51,11 @@
     font-size: 1.125rem;
     max-width: 600px;
   }
-}
 
-.card:hover {
-  transform: translate(-0.07em, -0.07em) scale(1.01);
-  box-shadow: var(--cwd-card-shadow-hover);
+  &:hover {
+    transform: translate(-0.07em, -0.07em) scale(1.01);
+    box-shadow: $card-shadow-hover;
+  }
 }
 
 .card-header,

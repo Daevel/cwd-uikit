@@ -1,5 +1,95 @@
-:root {
-  --font-family-base: 'Inter', sans-serif;
-  --font-size-base: 1rem;
-  --font-weight-base: 400;
+// Font family
+$font-family-base: 'Inter', sans-serif;
+
+$font-size-base: 16px;
+$font-size-hint: 12px;
+// Font weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-heavy: 900;
+
+
+// Breakpoints (puoi importarli da un file globale se preferisci)
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Font scale (REM) – Base 16px
+$font-scale: (
+  h1: (mobile: 2rem, tablet: 2.5rem, desktop: 3rem),
+  h2: (mobile: 1.75rem, tablet: 2rem, desktop: 2.5rem),
+  h3: (mobile: 1.5rem, tablet: 1.75rem, desktop: 2rem),
+  h4: (mobile: 1.25rem, tablet: 1.5rem, desktop: 1.75rem),
+  h5: (mobile: 1.125rem, tablet: 1.25rem, desktop: 1.5rem),
+  h6: (mobile: 1rem, tablet: 1.125rem, desktop: 1.25rem),
+  body: (mobile: 1rem, tablet: 1rem, desktop: 1rem),
+  small: (mobile: 0.875rem, tablet: 0.875rem, desktop: 0.875rem)
+);
+
+
+@mixin responsive-font($key) {
+  $sizes: map-get($font-scale, $key);
+
+  font-size: map-get($sizes, mobile);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: map-get($sizes, tablet);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: map-get($sizes, desktop);
+  }
 }
+
+h1, .h1 {
+  @include responsive-font(h1);
+  font-weight: $font-weight-bold;
+  margin-bottom: 0.5em;
+}
+
+h2, .h2 {
+  @include responsive-font(h2);
+  font-weight: $font-weight-bold;
+  margin-bottom: 0.5em;
+}
+
+h3, .h3 {
+  @include responsive-font(h3);
+  font-weight: $font-weight-semibold;
+  margin-bottom: 0.5em;
+}
+
+h4, .h4 {
+  @include responsive-font(h4);
+  font-weight: $font-weight-medium;
+  margin-bottom: 0.5em;
+}
+
+h5, .h5 {
+  @include responsive-font(h5);
+  font-weight: $font-weight-medium;
+  margin-bottom: 0.5em;
+}
+
+h6, .h6 {
+  @include responsive-font(h6);
+  font-weight: $font-weight-regular;
+  margin-bottom: 0.5em;
+}
+
+p, .body {
+  @include responsive-font(body);
+  font-weight: $font-weight-regular;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+small, .small {
+  @include responsive-font(small);
+  font-weight: $font-weight-light;
+  line-height: 1.4;
+}
+
