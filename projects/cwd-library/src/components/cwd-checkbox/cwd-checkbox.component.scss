@@ -1,0 +1,61 @@
+@import "../../styles.scss";
+
+.container {
+  $input-focus: $color-primary;
+  $input-out-of-focus: #fffbe6;
+  $bg-color: $color-text;
+  $bg-color-alt: #666;
+  $main-color: #323232;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-right: 0.5rem;
+    top: 0;
+    left: 0;
+    border: 2px solid $main-color;
+    border-radius: 5px;
+    box-shadow: 4px 4px $main-color;
+    background-color: $input-out-of-focus;
+    transition: all 0.3s ease;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $input-focus;
+  }
+
+  .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    display: none;
+    border: solid $bg-color;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .label-text {
+    font-size: 1rem;
+    color: $main-color;
+    font-weight: 500;
+  }
+}
