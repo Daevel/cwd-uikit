@@ -1,7 +1,7 @@
 <h1>Showcase</h1>
 
 <h2>🔷 Esempio con &lt;cwd-flex&gt;</h2>
-    <cwd-flexbox direction="row" gap="12" align="flex-start">
+    <cwd-flexbox>
         <cwd-input label="Nome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
             placeholder="esempio@email.com">
         </cwd-input>
@@ -9,7 +9,7 @@
             placeholder="esempio@email.com">
         </cwd-input>
     </cwd-flexbox>
-    <cwd-flexbox direction="row" gap="12" align="flex-start">
+    <cwd-flexbox>
         <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
             placeholder="esempio@email.com">
         </cwd-input>
@@ -23,11 +23,8 @@
     <h2>🔶 Esempio con direttiva [cwdFlex]</h2>
     <div
       cwdFlex
-      cwdFlexDirection="row"
-      cwdFlexAlign="flex-start"
-      cwdFlexJustify="start"
-      cwdFlexGap="12"
-      style="min-height: 200px;"
+      [cwdFlexDirection]="'row'"
+      [cwdFlexGap]="'8'"
     >
       <cwd-input label="Nome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
             placeholder="esempio@email.com">

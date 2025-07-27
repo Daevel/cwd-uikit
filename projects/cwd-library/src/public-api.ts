@@ -11,5 +11,9 @@ export * from './components/cwd-icon/cwd-icon.component';
 export * from './components/cwd-toast/cwd-toast.component';
 export * from './components/cwd-fab/cwd-fab.component';
 export * from './cwd-uikit.module'
-//*services
+
+//* Services
 export * from './services/cwd-toast.service';
+
+//* Types
+export * from './types/public-api';
