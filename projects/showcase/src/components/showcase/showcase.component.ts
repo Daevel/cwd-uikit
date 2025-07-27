@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdToastService, CwdFabComponent, CwdCheckboxComponent } from 'cwd-library';
+import { CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdToastService, CwdFabComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFlexboxDirective } from 'cwd-library';
 
 @Component({
   selector: 'app-showcase',
-  imports: [CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdCheckboxComponent],
+  imports: [CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFabComponent, CwdFlexboxDirective],
   templateUrl: './showcase.component.html',
   styleUrl: './showcase.component.scss'
 })
