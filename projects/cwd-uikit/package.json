@@ -1,0 +1,17 @@
+{
+  "name": "@daevel/uikit",
+  "version": "1.0.1",
+  "scripts": {
+    "build:cwd": "ng build cwd-uikit",
+    "release-sh": "bash ./scripts/publish-library.sh"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/public-api.ts"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

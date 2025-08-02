@@ -1,0 +1,21 @@
+.cwd-fab {
+  background: #fbca1f;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  font-size: 1.6rem;
+  position: relative;
+  outline: none;
+}
+
+.cwd-fab:hover {
+  background: #ffe066;
+  box-shadow: 0 4px 16px #0003;
+}
