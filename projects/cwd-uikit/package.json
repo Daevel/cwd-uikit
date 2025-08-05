@@ -1,9 +1,9 @@
 {
-  "name": "cwd-library",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+  "name": "@daevel/uikit",
+  "version": "1.0.1",
+  "scripts": {
+    "build:cwd": "ng build cwd-uikit",
+    "release-sh": "bash ./scripts/publish-library.sh"
   },
   "ngPackage": {
     "lib": {

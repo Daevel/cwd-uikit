@@ -17,7 +17,7 @@ describe('CwdIconComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the icon component', () => {
     expect(component).toBeTruthy();
   });
 });

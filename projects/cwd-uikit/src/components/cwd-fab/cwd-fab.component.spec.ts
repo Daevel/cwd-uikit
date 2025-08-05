@@ -17,7 +17,7 @@ describe('CwdFabComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the fab component', () => {
     expect(component).toBeTruthy();
   });
 });

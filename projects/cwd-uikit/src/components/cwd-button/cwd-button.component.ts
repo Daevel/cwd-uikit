@@ -6,7 +6,12 @@ import { CwdIconComponent } from '../cwd-icon/cwd-icon.component';
 @Component({
   selector: 'cwd-button',
   imports: [FontAwesomeModule, CwdIconComponent],
-  templateUrl: './cwd-button.component.html',
+  template: `
+  <button (click)="onClickButton($event)">
+      <cwd-icon [iconName]="iconName"></cwd-icon>
+      <ng-content></ng-content>
+  </button>
+  `,
   styleUrl: './cwd-button.component.scss',
   standalone: true
 })
@@ -14,13 +19,10 @@ export class CwdButtonComponent {
 
   @Input() iconName?: string;
 
-  @Output() click = new EventEmitter<MouseEvent>();
+  @Output() onClick = new EventEmitter<MouseEvent>();
 
-  public onClick(event: MouseEvent) {
-    this.click.emit(event);
+  public onClickButton(event: MouseEvent) {
+    this.onClick.emit(event);
   }
-
-
-
 
 }

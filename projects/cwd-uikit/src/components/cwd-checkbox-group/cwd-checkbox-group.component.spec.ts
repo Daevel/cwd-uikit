@@ -17,7 +17,7 @@ describe('CwdCheckboxGroupComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the checkbox-group-component', () => {
     expect(component).toBeTruthy();
   });
 });

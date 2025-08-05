@@ -17,7 +17,7 @@ describe('CwdCheckboxComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the checkbox component', () => {
     expect(component).toBeTruthy();
   });
 });

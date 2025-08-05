@@ -1,0 +1,29 @@
+# Escludi directory non necessarie
+/node_modules
+/dist
+/cypress
+/e2e
+/scripts
+/src/**/*.spec.ts
+/src/**/*.cy.ts
+/src/**/*.test.ts
+/src/**/*.stories.ts
+/src/**/*.mock.ts
+
+# Escludi configurazioni di sviluppo
+/tsconfig.spec.json
+/tsconfig.cypress.json
+/angular.json
+/cypress.config.ts
+/playwright.config.ts
+/vite.config.ts
+/karma.conf.js
+/jest.config.js
+/storybook
+/.storybook
+/.vscode
+/.idea
+
+# Escludi file di sistema/temporanei
+.DS_Store
+Thumbs.db

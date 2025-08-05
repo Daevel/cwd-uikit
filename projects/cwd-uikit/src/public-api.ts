@@ -1,7 +1,7 @@
 /*
  * Public API Surface of cwd-library
  */
-export * from './components/cwd-button/cwd-button.component';
+export * from './components/cwd-button/public-api';
 export * from './components/cwd-input/cwd-input.component';
 export * from './components/cwd-card/public-api';
 export * from './components/cwd-checkbox/public-api';
