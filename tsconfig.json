@@ -4,8 +4,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "cwd-library": [
-        "./dist/cwd-library"
+      "cwd-uikit": [
+        "./dist/cwd-uikit"
       ]
     },
     "outDir": "./dist/out-tsc",

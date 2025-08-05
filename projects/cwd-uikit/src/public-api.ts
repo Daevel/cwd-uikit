@@ -1,5 +1,5 @@
 /*
- * Public API Surface of cwd-library
+ * Public API Surface of cwd-uikit
  */
 export * from './components/cwd-button/public-api';
 export * from './components/cwd-input/cwd-input.component';

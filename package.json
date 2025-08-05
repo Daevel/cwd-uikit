@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:cwd": "ng build cwd-library",
+    "build:cwd": "ng build cwd-uikit",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

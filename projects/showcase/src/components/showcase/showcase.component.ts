@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdToastService, CwdFabComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFlexboxDirective } from 'cwd-library';
+import { CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFabComponent, CwdFlexboxDirective, CwdToastService } from 'cwd-uikit';
 
 @Component({
   selector: 'app-showcase',

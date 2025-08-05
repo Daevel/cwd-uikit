@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { CwdButtonComponent } from './components/cwd-button/cwd-button.component';
-import { CwdCardComponent } from './components/cwd-card/cwd-card.component';
-import { CwdCheckboxGroupComponent } from './components/cwd-checkbox-group/cwd-checkbox-group.component';
-import { CwdCheckboxComponent } from './components/cwd-checkbox/cwd-checkbox.component'
+import { CwdButtonComponent } from './components/cwd-button/public-api';
+import { CwdCardComponent } from './components/cwd-card/public-api';
+import { CwdCheckboxGroupComponent } from './components/cwd-checkbox-group/public-api';
+import { CwdCheckboxComponent } from './components/cwd-checkbox/public-api'
 import { CwdFabComponent } from './components/cwd-fab/cwd-fab.component';
 import { CwdIconComponent } from './components/cwd-icon/cwd-icon.component';
 import { CwdInputComponent } from './components/cwd-input/cwd-input.component';
 import { CwdToastComponent } from './components/cwd-toast/cwd-toast.component';
+import { CwdFlexboxComponent } from './components/cwd-flexbox/public-api';
 
 @NgModule({
 imports: [
@@ -20,7 +21,8 @@ imports: [
     CwdFabComponent,
     CwdIconComponent,
     CwdInputComponent,
-    CwdToastComponent
+    CwdToastComponent,
+    CwdFlexboxComponent
   ],
   exports: [CwdCardComponent]
 })
