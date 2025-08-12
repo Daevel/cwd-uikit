@@ -7,7 +7,7 @@ import { CwdIconComponent } from '../cwd-icon/cwd-icon.component';
   imports: [CwdIconComponent],
   template: `
     <button class="cwd-fab" (click)="onClick($event)">
-      <cwd-icon [iconName]="icon"></cwd-icon>
+      <cwd-icon class="no-margin" [iconName]="icon"></cwd-icon>
     </button>
   `,
   styleUrls: ['./cwd-fab.component.scss']

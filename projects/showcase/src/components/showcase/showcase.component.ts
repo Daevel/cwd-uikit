@@ -1,30 +1,20 @@
 import { Component } from '@angular/core';
-import { CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFabComponent, CwdFlexboxDirective, CwdToastService } from 'cwd-uikit';
+import { Router } from '@angular/router';
+import { CwdCardComponent, CwdButtonComponent} from 'cwd-uikit';
+import { ROUTE_PATHS } from '../../../@core/const';
 
 @Component({
   selector: 'app-showcase',
-  imports: [CwdCardComponent, CwdButtonComponent, CwdInputComponent, CwdIconComponent, CwdCheckboxComponent, CwdFlexboxComponent, CwdFabComponent, CwdFlexboxDirective],
+  imports: [CwdCardComponent, CwdButtonComponent],
   templateUrl: './showcase.component.html',
   styleUrl: './showcase.component.scss'
 })
 export class ShowcaseComponent {
 
-  public testoDiProva: string = "";
-  isSelected: boolean = false;
-
-  constructor(private toastService: CwdToastService) {
+  constructor(private router: Router) {
   }
 
-  handleResponse() {
-    this.testoDiProva = "prova";
+  public redirectToGettingStartedPage() {
+    this.router.navigate([`/${ROUTE_PATHS.GETTING_STARTED}`]);
   }
-
-  mostraPopup() {
-    this.toastService.toastSuccess("Operazione riuscita");
-  }
-
-  onCloseClick() {
-    this.testoDiProva = "";
-  }
-
 }

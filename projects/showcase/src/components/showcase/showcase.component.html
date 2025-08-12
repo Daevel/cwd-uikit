@@ -1,164 +1,45 @@
-<h1>Showcase</h1>
-
-<h2>🔷 Esempio con &lt;cwd-flex&gt;</h2>
-    <cwd-flexbox>
-        <cwd-input label="Nome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Cognome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-    </cwd-flexbox>
-    <cwd-flexbox>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Password" [(model)]="testoDiProva" hint="Inserisci la tua email" type="password"
-            placeholder="esempio@email.com">
-        </cwd-input>
-    </cwd-flexbox>
-
-    <hr />
-
-    <h2>🔶 Esempio con direttiva [cwdFlex]</h2>
-    <div
-      cwdFlex
-      [cwdFlexDirection]="'row'"
-      [cwdFlexGap]="'8'"
-    >
-      <cwd-input label="Nome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Cognome" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Password" [(model)]="testoDiProva" hint="Inserisci la tua email" type="password"
-            placeholder="esempio@email.com">
-        </cwd-input>
+<div class="container">
+    <!--* WELCOME CONTAINER -->
+    <div class="welcome-container">
+        <h2>CodeWithDaevel Uikit</h2>
+        <p>Uikit design made by Daevel for Angular</p>
+        <cwd-button (onClick)="redirectToGettingStartedPage()">Get started</cwd-button>
     </div>
-<hr>
-
-<cwd-card>
-    <div card-header>
-        <cwd-checkbox
-  [(checked)]="isSelected"
-  label="Accetto i termini e condizioni">
-</cwd-checkbox>
-        <cwd-checkbox label="Iscrivimi alla newsletter" [checked]="true"></cwd-checkbox>
+    <!--* CARD CONTAINER DESCRIPTION -->
+    <div class="card-descriptions">
+        <cwd-card color="primary" size="big">
+            <div card-header>
+                <h3>High quality</h3>
+            </div>
+            <div card-body>
+                <p>Internationalized and accessible components for everyone. Well tested to ensure performance and reliability.</p>
+            </div>
+            <div card-footer>
+                <p>Straightforward APIs with consistent cross platform behaviour.</p>
+            </div>
+        </cwd-card>
+        <cwd-card color="primary" size="big">
+            <div card-header>
+                <h3>Versatile</h3>
+            </div>
+            <div card-body>
+                <p>Provide tools that help developers build their own custom components with common interaction patterns.</p>
+            </div>
+            <div card-footer>
+                <p>Customizable within the bounds of the Material Design specification.</p>
+            </div>
+        </cwd-card>
+        <cwd-card color="primary" size="big">
+            <div card-header>
+                <h3>Frictionless</h3>
+            </div>
+            <div card-body>
+                <p>Built by the Angular team to integrate seamlessly with Angular.</p>
+            </div>
+            <div card-footer>
+                <p>Start from scratch or drop into your existing applications.</p>
+            </div>
+        </cwd-card>
     </div>
-
-</cwd-card>
-
-<cwd-card color="primary" size="big">
-    <div card-header>
-        <h2>Icone di prova</h2>
-    </div>
-    <cwd-icon iconName="coffee"></cwd-icon>
-    <cwd-icon iconName="user"></cwd-icon>
-    <cwd-icon iconName="check"></cwd-icon>
-    <cwd-icon iconName="timeline"></cwd-icon>
-    <cwd-icon iconName="levelUpAlt"></cwd-icon>
-</cwd-card>
-
-<cwd-card color="primary" size="small">
-    <div card-header>
-        <h2>Card di esempio</h2>
-    </div>
-    <div card-body>
-        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <p>Valore attuale: {{ testoDiProva }}</p>
-    </div>
-    <div card-footer>
-        <cwd-button (click)="handleResponse()" iconName="user">Azione della Card</cwd-button>
-        <cwd-button (click)="mostraPopup()" iconName="message">Mostra popup</cwd-button>
-    </div>
-</cwd-card>
-
-<cwd-card color="secondary" size="medium">
-    <div card-header>
-        <h2>Card di esempio</h2>
-    </div>
-    <div card-body>
-        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <p>Valore attuale: {{ testoDiProva }}</p>
-    </div>
-    <div card-footer>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-    </div>
-</cwd-card>
-
-<cwd-card color="warn" size="big">
-    <div card-header>
-        <h2>Card di esempio</h2>
-    </div>
-    <div card-body>
-        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <p>Valore attuale: {{ testoDiProva }}</p>
-    </div>
-    <div card-footer>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-    </div>
-</cwd-card>
-
-<cwd-card color="default" size="medium">
-    <div card-header>
-        <h2>Card di esempio</h2>
-    </div>
-    <div card-body>
-        <p>Questo è un esempio di card che utilizza il componente CWD Card.</p>
-        <cwd-input label="Email" [(model)]="testoDiProva" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <p>Valore attuale: {{ testoDiProva }}</p>
-    </div>
-    <div card-footer>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-    </div>
-</cwd-card>
-
-<cwd-card color="primary">
-    <div card-header>
-        <h3>Grande</h3>
-    </div>
-    <div card-body>
-        <p>Questa è una card Grande. chec in sostanza sembra essere proprio cosi cioe praticamente allora</p>
-        <cwd-input label="Email" ariaLabel="Campo email obbligatorio" hint="Inserisci la tua email" type="email"
-            placeholder="esempio@email.com">
-        </cwd-input>
-        <cwd-input label="Password" ariaLabel="Campo password obbligatorio" hint="Inserisci la tua password"
-            type="password" placeholder="esempio@email.com">
-        </cwd-input>
-    </div>
-    <div card-footer>
-        <cwd-button iconName="coffee">Click</cwd-button>
-        <cwd-button (click)="handleResponse()" iconName="check">Azione della Card</cwd-button>
-    </div>
-</cwd-card>
-
-<cwd-card>
-    <cwd-icon iconName="coffee"></cwd-icon>
-    <cwd-icon iconName="user"></cwd-icon>
-    <cwd-icon iconName="check"></cwd-icon>
-    <cwd-icon iconName="timeline"></cwd-icon>
-    <cwd-icon iconName="levelUpAlt"></cwd-icon>
-</cwd-card>
-
-<cwd-button (click)="mostraPopup()" iconName="message">
-    Mostra popup
-</cwd-button>
-<cwd-fab icon="xmark"></cwd-fab>
+    
+</div>

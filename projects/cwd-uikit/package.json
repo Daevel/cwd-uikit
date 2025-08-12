@@ -1,6 +1,6 @@
 {
   "name": "@daevel/uikit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build:cwd": "ng build cwd-uikit",
     "release-sh": "bash ./scripts/publish-library.sh"

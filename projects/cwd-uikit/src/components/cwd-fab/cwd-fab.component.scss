@@ -1,21 +1,32 @@
+@import '../../styles';
+
 .cwd-fab {
-  background: #fbca1f;
-  border: none;
+  background: $color-primary;
+  border: 3px solid $color-primary-contrast;
   border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  box-shadow: 0 2px 8px #0002;
+  width: clamp(40px, 6vw, 56px);
+  height: clamp(40px, 6vw, 56px);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  box-shadow: 0 4px 8px rgba($color-primary-contrast, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: box-shadow 0.2s, background 0.2s;
-  font-size: 1.6rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
   position: relative;
   outline: none;
 }
 
 .cwd-fab:hover {
-  background: #ffe066;
-  box-shadow: 0 4px 16px #0003;
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0 6px 12px rgba($color-primary-contrast, 0.5);
+}
+
+.cwd-fab:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0 2px 4px rgba($color-primary-contrast, 0.3);
+}
+
+.no-margin {
+  margin: 0;
 }

@@ -1,0 +1,25 @@
+.getting-started-container {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+//* FOR CODE SNIPPETS
+pre {
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  width: 100%;
+}
+
+code {
+  white-space: pre;
+}
