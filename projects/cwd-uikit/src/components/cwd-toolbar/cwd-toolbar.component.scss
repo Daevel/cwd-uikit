@@ -1,0 +1,62 @@
+@import "../../styles";
+
+:host {
+  display: block;
+}
+
+.toolbar {
+  background-color: $card-primary-bg;
+  border-color: $color-primary-contrast;
+  color: white;
+  border-radius: 0.7em;
+  border: 3px solid #0e0e0e;
+  box-shadow: 0.2em 0.2em #0002;
+  transition: all 0.3s ease-in-out;
+  margin: 1em 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toolbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin: 1em 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-left {
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+.toolbar-center {
+  flex: 1 1 auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.toolbar-right {
+  flex: 0 0 auto;
+}
+
+.burger-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

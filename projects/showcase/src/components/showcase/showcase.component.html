@@ -1,4 +1,21 @@
 <div class="container">
+    <!--* TOOLBAR CONTAINER -->
+    <div class="toolbar">
+        <cwd-toolbar>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
+            </div>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
+            </div>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
+            </div>
+            <div toolbar-right>
+                <cwd-button (onClick)="redirectOnGitHubPage()" iconName="github">GitHub</cwd-button>
+            </div>
+        </cwd-toolbar>
+    </div>
     <!--* WELCOME CONTAINER -->
     <div class="welcome-container">
         <h2>CodeWithDaevel Uikit</h2>
@@ -12,7 +29,8 @@
                 <h3>High quality</h3>
             </div>
             <div card-body>
-                <p>Internationalized and accessible components for everyone. Well tested to ensure performance and reliability.</p>
+                <p>Internationalized and accessible components for everyone. Well tested to ensure performance and
+                    reliability.</p>
             </div>
             <div card-footer>
                 <p>Straightforward APIs with consistent cross platform behaviour.</p>
@@ -23,7 +41,8 @@
                 <h3>Versatile</h3>
             </div>
             <div card-body>
-                <p>Provide tools that help developers build their own custom components with common interaction patterns.</p>
+                <p>Provide tools that help developers build their own custom components with common interaction
+                    patterns.</p>
             </div>
             <div card-footer>
                 <p>Customizable within the bounds of the Material Design specification.</p>
@@ -41,5 +60,5 @@
             </div>
         </cwd-card>
     </div>
-    
+
 </div>

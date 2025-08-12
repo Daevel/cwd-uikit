@@ -10,6 +10,7 @@ import { CwdIconComponent } from './components/cwd-icon/cwd-icon.component';
 import { CwdInputComponent } from './components/cwd-input/cwd-input.component';
 import { CwdToastComponent } from './components/cwd-toast/cwd-toast.component';
 import { CwdFlexboxComponent } from './components/cwd-flexbox/public-api';
+import { CwdToolbarComponent } from './components/cwd-toolbar/public-api';
 
 @NgModule({
 imports: [
@@ -22,7 +23,8 @@ imports: [
     CwdIconComponent,
     CwdInputComponent,
     CwdToastComponent,
-    CwdFlexboxComponent
+    CwdFlexboxComponent,
+    CwdToolbarComponent
   ],
   exports: [CwdCardComponent]
 })

@@ -1,0 +1,18 @@
+<div class="toolbar" [class.fixed]="isFixed">
+  <div class="toolbar-left">
+    <button class="burger-btn">
+      <cwd-fab iconName="menu"></cwd-fab>
+    </button>
+    <div class="toolbar-title">
+      <ng-content select="[toolbar-title]"></ng-content>
+    </div>
+  </div>
+
+  <div class="toolbar-center">
+    <ng-content select="[toolbar-center]"></ng-content>
+  </div>
+
+  <div class="toolbar-right">
+    <ng-content select="[toolbar-right]"></ng-content>
+  </div>
+</div>
