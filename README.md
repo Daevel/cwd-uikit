@@ -1,59 +1,45 @@
-# CwdUikit
+# Code With Daevel Uikit
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+This guide explains how to set up your Angular project to begin using CodeWithDaevel Uikit.
 
-## Development server
+It includes information on prerequisites, installing CodeWithDaevel Uikit, and optionally displaying a sample.
 
-To start a local development server, run:
+Uikit component in your application to verify your setup.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To install the library, run:
 
 ```bash
-ng generate component component-name
+npm install @daevel/uikit
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Display a component
+
+Let's display a button component in your app and verify that everything works.
+
+You need to import the CwdButtonComponent that you want to display by adding the following lines to your standalone component's imports, or otherwise your component's NgModule.
+
+```typescript
+import {CwdButtonComponent} from 'cwd/uikit';
+    @Component ({
+    imports: [
+        CwdButtonComponent,
+    ],
+    })
+    class AppComponent();
+```
+
+Add the 'cwd-button' tag to the app.component.html like so:
+
+```html
+  <cwd-button>Click me!<cwd-button>
+```
+
+## Run your local dev server
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Then point your browser to http://localhost:4200
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+You should see the Uikit button component on the page.
