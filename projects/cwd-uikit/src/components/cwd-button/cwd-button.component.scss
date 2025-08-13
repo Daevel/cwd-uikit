@@ -6,6 +6,9 @@
 }
 
 button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: $card-primary-bg;
   font-family: $font-family-base;
   padding: 0.6em 1.3em;
@@ -15,22 +18,27 @@ button {
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   cursor: pointer;
+
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+
+  .content-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-left {
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
-button:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
-}
-
-button:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
-}
-
-.icon-left {
-  margin-right: 0.5rem;
-}
-
-.icon-right {
-  margin-left: 0.5rem; 
-}

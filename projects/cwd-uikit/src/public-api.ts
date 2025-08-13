@@ -18,3 +18,6 @@ export * from './services/cwd-toast.service';
 
 //* Types
 export * from './types/public-api';
+
+//* Icons
+export * from './icons/public-api';

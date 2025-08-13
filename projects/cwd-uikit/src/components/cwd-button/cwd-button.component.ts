@@ -8,7 +8,9 @@ import { CwdIconComponent } from '../cwd-icon/cwd-icon.component';
   imports: [FontAwesomeModule, CwdIconComponent],
   template: `
   <button (click)="onClickButton($event)">
-      <cwd-icon [iconName]="iconName"></cwd-icon>
+    @if (iconName) {
+      <cwd-icon [iconName]="iconName" class="icon-left"></cwd-icon>
+    }
       <ng-content></ng-content>
   </button>
   `,

@@ -1,0 +1,1 @@
+export * from './cwd-icon.component';
