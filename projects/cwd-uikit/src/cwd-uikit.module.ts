@@ -24,7 +24,7 @@ imports: [
     CwdInputComponent,
     CwdToastComponent,
     CwdFlexboxComponent,
-    CwdToolbarComponent
+    CwdToolbarComponent,
   ],
   exports: [CwdCardComponent]
 })

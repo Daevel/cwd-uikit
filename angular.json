@@ -60,6 +60,7 @@
             "tsConfig": "projects/showcase/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "projects/showcase/src/assets",
               {
                 "glob": "**/*",
                 "input": "projects/showcase/public"

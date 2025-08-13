@@ -1,1 +1,31 @@
-<p>components works!</p>
+<!--* TOOLBAR SECTION -->
+<div>
+    <cwd-toolbar>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
+        </div>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
+        </div>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
+        </div>
+        <div toolbar-right>
+            <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faCodeBranch">GitHub</cwd-button>
+        </div>
+    </cwd-toolbar>
+</div>
+
+<div class="components-container">
+    <p>Angular Material offers a wide variety of UI components based on the <a
+            href="https://m3.material.io/components">Material Design specification</a></p>
+
+
+    <div cwdFlex cwdFlexDirection="row" cwdFlexJustify="flex-start" cwdFlexGap="0" cwdFlexWrap="wrap">
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'"
+            [ctaIcon]="'faArrowRight'" [ctaClick]="redirectToGettingStartedPage.bind(this)">
+            <h5>Button</h5>
+            <p>An interactive button with a range of presentation options.</p>
+        </app-exposing-card>
+    </div>
+</div>

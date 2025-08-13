@@ -1,1 +1,32 @@
-<p>guides works!</p>
+<!--* TOOLBAR SECTION -->
+<div>
+    <cwd-toolbar>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
+            </div>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
+            </div>
+            <div toolbar-center>
+                <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
+            </div>
+            <div toolbar-right>
+                <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faCodeBranch">GitHub</cwd-button>
+            </div>
+        </cwd-toolbar>
+</div>
+
+<div class="guides-container">
+    <cwd-card color="secondary" size="big">
+        <div card-header>
+            <h3>Uikit Installation Guide</h3>
+        </div>
+        <div card-body>
+            <p>Here you can find guides to help you get started with CodeWithDaevel Uikit.</p>
+        </div>
+        <div card-footer>
+            <p>Click on the buttons below to navigate to the respective guides.</p>
+            <cwd-button (onClick)="redirectToGettingStartedPage()">Getting Started</cwd-button>
+        </div>
+    </cwd-card>
+</div>

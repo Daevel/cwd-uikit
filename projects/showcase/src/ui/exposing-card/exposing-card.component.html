@@ -1,0 +1,16 @@
+<div class="my-card">
+  <!-- Header / Anteprima immagine -->
+  <div class="card-header" *ngIf="imageSrc">
+    <img [src]="imageSrc" alt="Anteprima" />
+  </div>
+
+  <!-- Body / contenuto principale -->
+  <div class="card-body">
+    <ng-content></ng-content> <!-- qui puoi inserire qualsiasi descrizione o contenuto HTML -->
+  </div>
+
+  <!-- Footer / CTA -->
+  <div class="card-footer" *ngIf="ctaText">
+    <cwd-button (click)="ctaClick?.()" [iconName]="ctaIcon">{{ ctaText }}</cwd-button>
+  </div>
+</div>
