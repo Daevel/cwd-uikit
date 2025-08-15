@@ -1,8 +1,8 @@
 <div class="cwd-toast" [ngClass]="{ hide: !visible }">
-  <div class="cwd-toast-close-wrapper">
-    <cwd-fab icon="xmark" (fabClick)="close()"></cwd-fab>
+  <div class="close-wrapper">
+    <cwd-fab size="small" iconName="faXmark" (fabClick)="close()"></cwd-fab>
   </div>
-  <div class="cwd-toast-body">
+  <div class="body">
     {{ message }}
   </div>
 </div>

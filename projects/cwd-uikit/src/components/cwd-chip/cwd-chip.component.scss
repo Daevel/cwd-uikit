@@ -1,0 +1,31 @@
+@import '../../styles';
+
+:host {
+  display: inline-flex;
+  margin: 0.2em;
+  font-family: var(--font-family-base);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: .3em .7em;
+  border: 3px solid black;
+  border-radius: 50px;
+  font-size: $font-size-base;
+  font-weight: $font-weight-heavy;
+  background-color: $color-surface;
+  color: var(--chip-text, #333);
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  .chip-text {
+    margin-right: 0.5em;
+  }
+
+  &.selected {
+    background-color: var(--chip-selected-bg, var(--color-primary, #6200ee));
+    color: var(--chip-selected-text, #fff);
+  }
+
+}

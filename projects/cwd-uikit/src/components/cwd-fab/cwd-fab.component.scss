@@ -1,30 +1,47 @@
-@import '../../styles';
+@import "../../styles";
+
+:host {
+  margin: 0.2em;
+}
 
 .cwd-fab {
-  background: $color-primary;
-  border: 3px solid $color-primary-contrast;
-  border-radius: 50%;
-  width: clamp(40px, 6vw, 56px);
-  height: clamp(40px, 6vw, 56px);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  box-shadow: 0 4px 8px rgba($color-primary-contrast, 0.4);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  background: $color-primary;
+  border: 3px solid $color-primary-contrast;
   cursor: pointer;
-  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
-  position: relative;
-  outline: none;
-}
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 8px rgba($color-primary-contrast, 0.4);
 
-.cwd-fab:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0 6px 12px rgba($color-primary-contrast, 0.5);
-}
+  &.small {
+    width: $fab-small-size;
+    height: $fab-small-size;
+    font-size: $fab-small-font;
+  }
 
-.cwd-fab:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0 2px 4px rgba($color-primary-contrast, 0.3);
+  &.medium {
+    width: $fab-medium-size;
+    height: $fab-medium-size;
+    font-size: $fab-medium-font;
+  }
+
+  &.large {
+    width: $fab-large-size;
+    height: $fab-large-size;
+    font-size: $fab-large-font;
+  }
+
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0 6px 12px rgba($color-primary-contrast, 0.5);
+  }
+
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0 2px 4px rgba($color-primary-contrast, 0.3);
+  }
 }
 
 .no-margin {

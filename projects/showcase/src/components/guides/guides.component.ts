@@ -11,7 +11,7 @@ import { ROUTE_PATHS, EXTERNAL_LINKS } from '../../../@core/const';
 })
 export class GuidesComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   public redirectToShowcasePage() {
     this.router.navigate([`/${ROUTE_PATHS.SHOWCASE}`]);
