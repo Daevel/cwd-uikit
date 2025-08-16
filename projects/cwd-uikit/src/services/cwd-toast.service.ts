@@ -1,5 +1,8 @@
-import { ApplicationRef, ComponentRef, Injectable, Injector, createComponent } from '@angular/core';
+import { ApplicationRef, ComponentRef, EnvironmentInjector, Injectable, Injector, createComponent } from '@angular/core';
 import { CwdToastComponent } from '../components/cwd-toast/cwd-toast.component';
+import { CwdToastPosition, CwdToastType } from '../types/cwd-toast-types';
+import { TOAST_SUCCESS_NOTIFICATION_WAV, TOAST_INFO_NOTIFICATION_WAV, TOAST_ERROR_NOTIFICATION_MP3 } from '../types/audio-const-base64';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +10,28 @@ import { CwdToastComponent } from '../components/cwd-toast/cwd-toast.component';
 export class CwdToastService {
 
   private toastRef?: ComponentRef<CwdToastComponent>;
+  private toasts: ComponentRef<CwdToastComponent>[] = [];
 
-  constructor(private appRef: ApplicationRef, private injector: Injector) { }
+  constructor(private appRef: ApplicationRef, private injector: EnvironmentInjector) { }
 
-  toastSuccess(message: string) {
-    this.showToast(message);
+  public toast(message: string, label: string, type: CwdToastType = 'info', position: CwdToastPosition = 'bottom-left', delayTime?: number) {
+    this.showToast(message, label, type, position, delayTime);
   }
 
-  private showToast(message: string) {
+  public toastSuccess(message: string, label: string, position: CwdToastPosition, delayTime?: number) {
+    this.showToast(message, label, 'success', position, delayTime);
+  }
+
+  public toastError(message: string, label: string, position: CwdToastPosition, delayTime?: number) {
+    this.showToast(message, label, 'error', position, delayTime);
+  }
+
+  private showToast(message: string, label: string, type: CwdToastType, position: CwdToastPosition, delayTime?: number) {
+    const timeout = delayTime ?? 3000;
+
+    // Riproduci il suono in base al tipo di toast
+    this.playSound(type);
+
     // Rimuovi eventuale toast precedente
     if (this.toastRef) {
       this.appRef.detachView(this.toastRef.hostView);
@@ -23,10 +40,13 @@ export class CwdToastService {
 
     // Crea il componente toast dinamicamente
     this.toastRef = createComponent(CwdToastComponent, {
-      environmentInjector: this.appRef.injector
+      environmentInjector: this.injector
     });
-    this.toastRef.instance.visible = true;
-    this.toastRef.instance.message = message; // <-- usa l'input, non innerHTML
+    this.toastRef.instance.visible.set(true);
+    this.toastRef.instance.message = message;
+    this.toastRef.instance.label = label;
+    this.toastRef.instance.type = type;
+    this.toastRef.instance.position = position;
 
     // Aggiungi al DOM
     this.appRef.attachView(this.toastRef.hostView);
@@ -36,12 +56,32 @@ export class CwdToastService {
     setTimeout(() => {
       this.toastRef?.instance.close();
       setTimeout(() => {
-        if (this.toastRef) {
-          this.appRef.detachView(this.toastRef.hostView);
-          this.toastRef.destroy();
-          this.toastRef = undefined;
-        }
+        this.appRef.detachView(this.toastRef!.hostView);
+        this.toastRef!.destroy();
+        this.toasts = this.toasts.filter(t => t !== this.toastRef);
       }, 300);
-    }, 3000);
+    }, timeout);
+  }
+
+  private playSound(type: CwdToastType) {
+    let audioSrc: string;
+
+    switch (type) {
+      case 'success':
+        audioSrc = TOAST_SUCCESS_NOTIFICATION_WAV;
+        break;
+      case 'info':
+        audioSrc = TOAST_INFO_NOTIFICATION_WAV;
+        break;
+      case 'error':
+        audioSrc = TOAST_ERROR_NOTIFICATION_MP3;
+        break;
+      default:
+        return;
+    }
+
+    const audio = new Audio(audioSrc);
+    audio.volume = 0.3;
+    audio.play().catch(err => console.warn('Errore riproduzione audio toast:', err));
   }
 }

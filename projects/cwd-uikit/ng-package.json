@@ -7,5 +7,7 @@
       "src/styles"
     ]
   },
-  "assets": []
+  "assets": [
+    "src/assets/audios"
+  ]
 }

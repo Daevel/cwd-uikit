@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CwdButtonComponent, CwdCardComponent, CwdToolbarComponent } from 'cwd-uikit';
+import { CwdButtonComponent, CwdCardComponent, CwdToastService, CwdToolbarComponent } from 'cwd-uikit';
 import { ROUTE_PATHS, EXTERNAL_LINKS } from '../../../@core/const';
 
 @Component({
@@ -11,7 +11,7 @@ import { ROUTE_PATHS, EXTERNAL_LINKS } from '../../../@core/const';
 })
 export class GuidesComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cwdService: CwdToastService) {}
 
   public redirectToShowcasePage() {
     this.router.navigate([`/${ROUTE_PATHS.SHOWCASE}`]);

@@ -1,10 +1,63 @@
 @import "../../styles.scss";
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* animazioni verticali e orizzontali */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .cwd-toast {
   position: fixed;
-  right: 2em;
-  top: 2em;
-  max-width: 600px;
+  max-width: 400px;
+  max-height: 200px;
   background: $color-surface;
   border: 3px solid black;
   border-radius: 0.4em;
@@ -15,29 +68,110 @@
   z-index: 9999;
   padding-top: 1.2em;
 
-  /* stato iniziale visibile */
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  .headbar {
+    display: flex;
+    justify-content: space-between; // spinge left e right agli estremi
+    align-items: center;
+    gap: 0.5em;
+
+    .headbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5em; // distanza tra icona e label
+    }
+
+    .headbar-right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .label {
+    font-weight: 600;
+  }
 
   .close-wrapper {
     display: flex;
-    flex-direction: row;
     justify-content: end;
   }
-
   .body {
     margin-top: 1em;
-    padding: 0.5em 0.2em 0.2em 0.2em;
+    padding: 0.5em 0.2em 0.2em;
     font-size: 1rem;
     font-weight: 500;
     word-break: break-word;
   }
 
+  /* animazioni */
+  &.top-left,
+  &.top-center,
+  &.top-right {
+    animation: slideInFromTop 0.3s ease forwards;
+  }
+  &.bottom-left,
+  &.bottom-center,
+  &.bottom-right {
+    animation: slideInFromBottom 0.3s ease forwards;
+  }
+  &.mid-left {
+    animation: slideInFromLeft 0.3s ease forwards;
+  }
+  &.mid-right {
+    animation: slideInFromRight 0.3s ease forwards;
+  }
+  &.center {
+    animation: slideInFromBottom 0.3s ease forwards;
+  }
+
   /* stato nascosto */
   &.hide {
     opacity: 0;
-    transform: translateY(-10px); /* piccolo movimento verso l’alto */
     pointer-events: none;
+    animation: fadeOut 0.3s ease forwards;
+
+    transform: none !important;
+  }
+
+  /* posizioni */
+  &.top-left {
+    top: 1rem;
+    left: 1rem;
+  }
+  &.top-center {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.top-right {
+    top: 1rem;
+    right: 1rem;
+  }
+  &.mid-left {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+  }
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.mid-right {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+  &.bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  &.bottom-center {
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
   }
 }
