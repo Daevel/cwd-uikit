@@ -33,3 +33,12 @@
 
   // Shadow
   $card-shadow-hover: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.2);
+
+  $colors: (
+  primary: $color-primary,
+  accent: $color-accent,
+  warn: $color-warn,
+  surface: $color-surface,
+  text: $color-text,
+  muted: $color-muted
+);

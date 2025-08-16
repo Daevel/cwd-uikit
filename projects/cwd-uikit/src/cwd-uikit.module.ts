@@ -12,6 +12,8 @@ import { CwdToastComponent } from './components/cwd-toast/cwd-toast.component';
 import { CwdFlexboxComponent } from './components/cwd-flexbox/public-api';
 import { CwdToolbarComponent } from './components/cwd-toolbar/public-api';
 import { CwdChipComponent } from './components/cwd-chip/cwd-chip.component';
+import { CwdSpinnerComponent } from './components/cwd-spinner/cwd-spinner.component';
+import { CwdLoaderComponent } from './components/cwd-loader/cwd-loader.component';
 
 @NgModule({
 imports: [
@@ -26,7 +28,9 @@ imports: [
     CwdToastComponent,
     CwdFlexboxComponent,
     CwdToolbarComponent,
-    CwdChipComponent
+    CwdChipComponent,
+    CwdSpinnerComponent,
+    CwdLoaderComponent
   ],
   exports: [CwdCardComponent]
 })

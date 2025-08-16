@@ -1,3 +1,4 @@
+@import './colors';
 
 //* cwd-fab component styles
 
@@ -9,3 +10,16 @@ $fab-medium-font: 1.6rem;
 
 $fab-large-size: 72px;
 $fab-large-font: 2rem;
+
+//* cwd-spinner component styles
+
+$spinner-small-size: 32px;
+$spinner-medium-size: 56px;
+$spinner-large-size: 72px;
+$spinner-color: $color-primary;
+
+$spinner-sizes: (
+  small: $spinner-small-size,
+  medium: $spinner-medium-size,
+  big: $spinner-large-size
+);
