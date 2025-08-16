@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,22 +9,22 @@ import { CommonModule } from '@angular/common';
     <label class="container">
       <input
         type="checkbox"
-        [checked]="checked"
+        [checked]="checkedSignal()"
         (change)="onToggle()"
       />
+      @if(label) {
+        <span class="label-text">{{ label }}</span>
+      }
       <div class="checkmark"></div>
-      <span class="label-text" *ngIf="label">{{ label }}</span>
     </label>
   `,
   styleUrls: ['./cwd-checkbox.component.scss']
 })
 export class CwdCheckboxComponent {
-  @Input() checked = false;
   @Input() label: string = '';
-  @Output() checkedChange = new EventEmitter<boolean>();
+  @Input() checkedSignal: WritableSignal<boolean> = signal(false);
 
   onToggle() {
-    this.checked = !this.checked;
-    this.checkedChange.emit(this.checked);
+    this.checkedSignal.set(!this.checkedSignal());
   }
 }

@@ -19,6 +19,20 @@
   animation: dash4 1.5s ease-in-out infinite;
 }
 
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3); /* trasparente */
+  backdrop-filter: blur(5px); /* effetto vetroso */
+  z-index: 9999;
+  pointer-events: all; /* blocca click sotto */
+}
+
 // colori
 @each $name, $value in $colors {
   .#{$name} {
