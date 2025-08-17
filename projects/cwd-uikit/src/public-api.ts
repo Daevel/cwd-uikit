@@ -14,6 +14,7 @@ export * from './components/cwd-toolbar/public-api';
 export * from './components/cwd-chip/public-api';
 export * from './components/cwd-spinner/public-api';
 export * from './components/cwd-loader/public-api';
+export * from './components/cwd-slide-toggle/public-api';
 export * from './cwd-uikit.module'
 
 //* Services

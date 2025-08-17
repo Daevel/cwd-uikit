@@ -14,6 +14,7 @@ import { CwdToolbarComponent } from './components/cwd-toolbar/public-api';
 import { CwdChipComponent } from './components/cwd-chip/cwd-chip.component';
 import { CwdSpinnerComponent } from './components/cwd-spinner/cwd-spinner.component';
 import { CwdLoaderComponent } from './components/cwd-loader/cwd-loader.component';
+import { CwdSlideToggleComponent } from './components/cwd-slide-toggle/cwd-slide-toggle.component';
 
 @NgModule({
 imports: [
@@ -30,7 +31,8 @@ imports: [
     CwdToolbarComponent,
     CwdChipComponent,
     CwdSpinnerComponent,
-    CwdLoaderComponent
+    CwdLoaderComponent,
+    CwdSlideToggleComponent
   ],
   exports: [CwdCardComponent]
 })

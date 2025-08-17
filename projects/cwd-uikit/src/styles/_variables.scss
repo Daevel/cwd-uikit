@@ -23,3 +23,10 @@ $spinner-sizes: (
   medium: $spinner-medium-size,
   big: $spinner-large-size
 );
+
+//* cwd-slide-toggle component styles
+
+$toggle-color-idle-position: $color-primary-contrast;
+$toggle-color-bg-idle-position: $color-surface;
+$toggle-color-bg-switched-position: $color-primary;
+
