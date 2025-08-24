@@ -1,19 +1,19 @@
 <!--* TOOLBAR SECTION -->
 <div>
     <cwd-toolbar>
-            <div toolbar-center>
-                <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
-            </div>
-            <div toolbar-center>
-                <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
-            </div>
-            <div toolbar-center>
-                <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
-            </div>
-            <div toolbar-right>
-                <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faCodeBranch">GitHub</cwd-button>
-            </div>
-        </cwd-toolbar>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
+        </div>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
+        </div>
+        <div toolbar-center>
+            <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
+        </div>
+        <div toolbar-right>
+            <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faCodeBranch">GitHub</cwd-button>
+        </div>
+    </cwd-toolbar>
 </div>
 
 <div class="guides-container">
@@ -30,5 +30,3 @@
         </div>
     </cwd-card>
 </div>
-
-<cwd-button (onClick)="showSpinner()">Mostra spinner</cwd-button>

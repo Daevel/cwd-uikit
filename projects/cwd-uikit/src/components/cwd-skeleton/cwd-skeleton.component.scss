@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+:host .cwd-skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+
+  &.animated {
+    animation: loading 1.5s infinite;
+  }
+
+  &.text {
+    border-radius: 4px;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.rect {
+    border-radius: 0;
+  }
+
+  &.rounded {
+    border-radius: 8px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

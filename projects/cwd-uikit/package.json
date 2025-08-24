@@ -1,6 +1,6 @@
 {
   "name": "@daevel/uikit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "prebuild:cwd": "bash ./scripts/generate-icons.sh",
     "build:cwd": "ng build cwd-uikit",
