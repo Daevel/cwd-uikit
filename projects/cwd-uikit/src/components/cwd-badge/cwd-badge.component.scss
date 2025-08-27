@@ -1,0 +1,49 @@
+:host {
+  position: absolute; /* 👈 ora si posiziona rispetto al button */
+}
+
+.badge-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9999px;
+  line-height: 1;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Dot mode */
+:host(.dot) .badge-content {
+  min-width: 10px;
+  height: 10px;
+  padding: 0;
+}
+
+/* Posizioni */
+:host(.top-right) {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+:host(.top-left) {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+:host(.bottom-right) {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+:host(.bottom-left) {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}

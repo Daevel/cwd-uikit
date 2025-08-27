@@ -1,10 +1,7 @@
-@import "../../styles";
-
-:host {
-  margin: 0.2em;
-}
+@import '../../styles';
 
 .cwd-fab {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,8 +39,4 @@
     transform: translate(0.05em, 0.05em);
     box-shadow: 0 2px 4px rgba($color-primary-contrast, 0.3);
   }
-}
-
-.no-margin {
-  margin: 0;
 }

@@ -1,0 +1,29 @@
+<cwd-card *ngIf="open" size="small" color="primary" class="cwd-modal-panel">
+
+    <div card-header class="cwd-modal-header">
+        <h2>{{ title }}</h2>
+        <cwd-fab class="cwd-close" (fabClick)="close()" iconName="faXmark"></cwd-fab>
+    </div>
+
+    <div card-body class="cwd-modal-body">
+        <ng-container *ngIf="notifications?.length; else empty">
+            <div class="cwd-notification" *ngFor="let n of notifications">
+                <span class="cwd-message">{{ n.message }}</span>
+                <div class="cwd-actions">
+                    <cwd-button (onClick)="accept(n)">Accetta</cwd-button>
+                    <cwd-button (onClick)="decline(n)">Rifiuta</cwd-button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #empty>
+            <p class="cwd-empty">Nessuna notifica</p>
+        </ng-template>
+    </div>
+
+    <div card-footer *ngIf="showFooter" class="cwd-modal-footer">
+        <cwd-button (onClick)="close()">Chiudi</cwd-button>
+    </div>
+
+</cwd-card>
+
+<div class="cwd-modal-backdrop" *ngIf="open" (click)="onBackdropClick()"></div>

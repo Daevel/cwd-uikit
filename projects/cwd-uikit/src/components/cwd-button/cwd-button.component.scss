@@ -18,6 +18,7 @@ button {
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   cursor: pointer;
+  position: relative; /* 👈 necessario per il badge */
 
   &:hover {
     transform: translate(-0.05em, -0.05em);
@@ -40,5 +41,10 @@ button {
     display: inline-flex;
     align-items: center;
   }
-}
 
+  /* Badge override */
+  cwd-badge {
+    position: absolute;
+    pointer-events: none; /* evita che il badge intercetti il click */
+  }
+}

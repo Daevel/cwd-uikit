@@ -17,6 +17,8 @@ import { CwdLoaderComponent } from './components/cwd-loader/cwd-loader.component
 import { CwdSlideToggleComponent } from './components/cwd-slide-toggle/cwd-slide-toggle.component';
 import { CwdSkeletonComponent } from './components/cwd-skeleton/cwd-skeleton.component';
 import { CwdSkeletonTemplateComponent } from './public-api';
+import { CwdBadgeComponent } from './components/cwd-badge/cwd-badge.component';
+import { CwdModalComponent } from './components/cwd-modal/cwd-modal.component';
 
 @NgModule({
 imports: [
@@ -36,7 +38,9 @@ imports: [
     CwdLoaderComponent,
     CwdSlideToggleComponent,
     CwdSkeletonComponent,
-    CwdSkeletonTemplateComponent
+    CwdSkeletonTemplateComponent,
+    CwdBadgeComponent,
+    CwdModalComponent
   ],
   exports: [CwdCardComponent]
 })

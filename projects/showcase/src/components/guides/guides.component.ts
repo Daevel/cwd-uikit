@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CwdButtonComponent, CwdCardComponent, CwdToolbarComponent } from 'cwd-uikit';
+import { CwdButtonComponent, CwdCardComponent, CwdModalComponent, CwdToolbarComponent } from 'cwd-uikit';
 import { ROUTE_PATHS, EXTERNAL_LINKS } from '../../../@core/const';
+
 
 @Component({
   selector: 'app-guides',
-  imports: [CwdToolbarComponent, CwdButtonComponent, CwdCardComponent],
+  imports: [CwdToolbarComponent, CwdButtonComponent, CwdCardComponent, CwdModalComponent],
   templateUrl: './guides.component.html',
   styleUrl: './guides.component.scss'
 })
@@ -32,5 +33,6 @@ export class GuidesComponent {
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }
+
 
 }

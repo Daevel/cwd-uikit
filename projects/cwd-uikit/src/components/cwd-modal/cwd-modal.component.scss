@@ -1,0 +1,107 @@
+.cwd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+}
+
+.cwd-modal-panel {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  width: 400;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.6em;
+  animation: slideIn 0.25s ease;
+  z-index: 999;
+}
+
+.cwd-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  border-bottom: 1px solid #eee;
+
+  h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+
+.cwd-close {
+  border: none;
+  background: transparent;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.cwd-modal-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cwd-notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 1em;
+  border-bottom: 1px solid #eee;
+
+  &:hover {
+    background: #fafafa;
+  }
+
+  .cwd-message {
+    flex: 1 1 auto; // consente ridimensionamento
+    margin-right: 0.5em;
+    font-size: 0.95em;
+    word-break: break-word; // va a capo se il testo è lungo
+    white-space: normal; // permetti più righe
+  }
+
+  .cwd-actions {
+    display: flex;
+    gap: 0.4em;
+    flex-direction: column;
+
+    button {
+      padding: 0.3em 0.6em;
+      border: none;
+      border-radius: 0.3em;
+      cursor: pointer;
+      font-size: 0.8em;
+      font-weight: 600;
+      transition: background 0.2s ease;
+
+      &.accept {
+        background: #4caf50;
+        color: white;
+      }
+      &.decline {
+        background: #e57373;
+        color: white;
+      }
+    }
+  }
+}
+
+.cwd-empty {
+  padding: 1em;
+  text-align: center;
+  color: #666;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
