@@ -1,9 +1,14 @@
 .components-container {
-    width: 800px;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     margin: 0 auto;
+}
+
+.exposing-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

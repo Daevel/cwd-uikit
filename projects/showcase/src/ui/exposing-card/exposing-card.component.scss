@@ -1,6 +1,8 @@
 @import "../../styles.scss";
 
 .my-card {
+  max-width: 400px;
+  height: auto;
   background-color: $card-neutral-bg;
   color: $card-neutral-text;
   border-radius: 0.7em;

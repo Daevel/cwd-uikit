@@ -6,21 +6,23 @@
   // Palette base
   --color-primary: #{$color-primary};
   --color-primary-contrast: #{$color-primary-contrast};
-  --color-accent: #{$color-accent};
+  --color-secondary: #{$color-secondary};
   --color-secondary-contrast: #{$color-secondary-contrast};
   --color-warn: #{$color-warn};
   --color-warn-contrast: #{$color-warn-contrast};
+  --color-danger: #{$color-danger};
+  --color-danger-contrast: #{$color-danger-contrast};
   --color-surface: #{$color-surface};
   --color-border: #{$color-border};
   --color-text: #{$color-text};
-  --color-muted: #{$color-muted};
+  --color-muted: #{$color-disabled};
 
   // Typography (generate from SCSS)
   --font-family-base: #{$font-family-base};
   --font-size-base: #{$font-size-base};
   --font-weight-base: #{$font-weight-regular};
 
-  // Card
+  // Card generico
   --cwd-card-bg: var(--color-primary);
   --cwd-card-border: var(--color-border);
   --cwd-card-radius: 0.75rem;
@@ -33,13 +35,17 @@
   --card-primary-border: #{$card-primary-border};
   --card-primary-text: #{$card-primary-text};
 
-  --card-accent-bg: #{$card-accent-bg};
-  --card-accent-border: #{$card-accent-border};
-  --card-accent-text: #{$card-accent-text};
+  --card-secondary-bg: #{$card-secondary-bg};
+  --card-secondary-border: #{$card-secondary-border};
+  --card-secondary-text: #{$card-secondary-text};
 
   --card-warn-bg: #{$card-warn-bg};
   --card-warn-border: #{$card-warn-border};
   --card-warn-text: #{$card-warn-text};
+
+  --card-danger-bg: #{$card-danger-bg};
+  --card-danger-border: #{$card-danger-border};
+  --card-danger-text: #{$card-danger-text};
 
   --card-neutral-bg: #{$card-neutral-bg};
   --card-neutral-border: #{$card-neutral-border};

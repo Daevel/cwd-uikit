@@ -18,6 +18,14 @@ export const routes: Routes = [
         loadComponent: () => import('../components/components/components.component').then(m => m.ComponentsComponent)
     },
     {
+        path: 'components/button',
+        loadComponent: () => import('../components/components/button-introduction-page/button-introduction-page.component').then(m => m.ButtonIntroductionPageComponent)
+    },
+    {
+        path: 'components/fab',
+        loadComponent: () => import('../components/components/fab-introduction-page/fab-introduction-page.component').then(m => m.FabIntroductionPageComponent)
+    },
+    {
         path: '**',
         redirectTo: 'showcase'
     },

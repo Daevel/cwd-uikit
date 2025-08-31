@@ -30,6 +30,14 @@ export class ComponentsComponent {
     this.router.navigate([`/${ROUTE_PATHS.GUIDES}`]);
   }
 
+  public redirectToButtonIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/button`]);
+  }
+
+  public redirectToFabIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/fab`]);
+  }
+
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }

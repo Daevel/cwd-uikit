@@ -21,11 +21,23 @@
             href="https://m3.material.io/components">Material Design specification</a></p>
 
 
-    <div cwdFlex cwdFlexDirection="row" cwdFlexJustify="flex-start" cwdFlexGap="0" cwdFlexWrap="wrap">
-        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'"
-            [ctaIcon]="'faArrowRight'" [ctaClick]="redirectToGettingStartedPage.bind(this)">
-            <h5>Button</h5>
-            <p>An interactive button with a range of presentation options.</p>
+    <div cwdFlex cwdFlexDirection="row" cwdFlexJustify="space-between" cwdFlexGap="10" cwdFlexWrap="nowrap">
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToButtonIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Button</h5>
+                <p>An interactive button with a range of presentation options.</p>
+            </div>
         </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToFabIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Fab</h5>
+                <p>Floating action buttons (FAB) buttons are circular and only have space for a single icon.
+                </p>
+            </div>
+        </app-exposing-card>
+
     </div>
 </div>

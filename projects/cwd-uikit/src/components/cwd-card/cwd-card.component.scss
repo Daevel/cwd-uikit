@@ -1,4 +1,4 @@
-@import '../../styles';
+@import "../../styles";
 
 :host {
   display: block;
@@ -9,20 +9,23 @@
   color: $card-neutral-text;
   border-radius: 0.7em;
   border: 3px solid $card-primary-border;
-  box-shadow: 0.2em 0.2em #00000022;
+  box-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.13);
   transition: box-shadow 0.2s, transform 0.2s;
   margin: 1em 0;
+  padding: 1rem;
+  font-size: 1rem;
 
+  /* ---------- Color Variants ---------- */
   &.cwd-card--primary {
     background-color: $card-primary-bg;
     border-color: $card-primary-border;
     color: $card-primary-text;
   }
 
-  &.cwd-card--accent {
-    background-color: $card-accent-bg;
-    border-color: $card-accent-border;
-    color: $card-accent-text;
+  &.cwd-card--secondary {
+    background-color: $card-secondary-bg;
+    border-color: $card-secondary-border;
+    color: $card-secondary-text;
   }
 
   &.cwd-card--warn {
@@ -31,9 +34,13 @@
     color: $card-warn-text;
   }
 
-  padding: 1rem;
-  font-size: 1rem;
+  &.cwd-card--danger {
+    background-color: $card-danger-bg;
+    border-color: $card-danger-border;
+    color: $card-danger-text;
+  }
 
+  /* ---------- Size Variants ---------- */
   &.cwd-card--small {
     padding: 0.5rem;
     font-size: 0.875rem;
@@ -58,6 +65,7 @@
   }
 }
 
+/* ---------- Internal Structure ---------- */
 .card-header,
 .card-body,
 .card-footer {

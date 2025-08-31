@@ -34,5 +34,4 @@ export class GuidesComponent {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }
 
-
 }

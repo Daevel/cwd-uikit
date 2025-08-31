@@ -1,21 +1,25 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CwdIconComponent } from '../cwd-icon/cwd-icon.component';
 import { CwdBadgeComponent } from '../cwd-badge/cwd-badge.component';
+import { NgClass } from '@angular/common';
 
 
 @Component({
   selector: 'cwd-button',
-  imports: [FontAwesomeModule, CwdIconComponent, CwdBadgeComponent],
+  imports: [FontAwesomeModule, CwdIconComponent, CwdBadgeComponent, NgClass],
   template: `
-  <button (click)="onClickButton($event)">
-    @if (iconName) {
-      <cwd-icon [iconName]="iconName" class="icon-left"></cwd-icon>
+  <button 
+    (click)="onClickButton($event)" 
+    [ngClass]="[position(), color()]"
+    [disabled]="disabled()">
+    @if (iconName()) {
+      <cwd-icon [iconName]="iconName()" [ngClass]="'icon-' + iconPosition()"></cwd-icon>
     }
       <ng-content></ng-content>
 
-    @if (badgeValue) {
-    <cwd-badge [value]="badgeValue" [position]="badgePosition"></cwd-badge>
+    @if (badgeValue()) {
+    <cwd-badge [value]="badgeValue()" [position]="badgePosition()"></cwd-badge>
     }
   </button>
   `,
@@ -24,12 +28,18 @@ import { CwdBadgeComponent } from '../cwd-badge/cwd-badge.component';
 })
 export class CwdButtonComponent {
 
-  @Input() iconName?: string;
-  @Input() badgeValue?: string | number;
-  @Input() badgePosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'top-right';
+  iconName = input<string>();
+  iconPosition = input<'left' | 'right'>('left');
 
+  color = input<'primary' | 'secondary' | 'warn' | 'danger'>('primary');
 
-  @Output() onClick = new EventEmitter<MouseEvent>();
+  badgeValue = input<string | number>('');
+  badgePosition = input<'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'>('top-right');
+
+  position = input<'text' | 'outlined' | 'filled' | 'default'>('filled');
+  disabled = input<boolean>(false);
+
+  onClick = output<MouseEvent>();
 
   public onClickButton(event: MouseEvent) {
     this.onClick.emit(event);
