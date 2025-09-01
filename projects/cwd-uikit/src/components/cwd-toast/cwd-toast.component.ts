@@ -15,7 +15,7 @@ import { CwdIconComponent } from '../../components/cwd-icon/cwd-icon.component';
       <span class="label">{{label}}</span>
     </div>
     <div class="headbar-right">
-      <cwd-fab size="small" iconName="faXmark" (fabClick)="close()"></cwd-fab>
+      <cwd-fab [size]="'small'" [iconName]="'faXmark'" (fabClick)="close()"></cwd-fab>
     </div>
   </div>
   <div class="body">

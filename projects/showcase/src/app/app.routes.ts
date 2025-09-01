@@ -26,6 +26,10 @@ export const routes: Routes = [
         loadComponent: () => import('../components/components/fab-introduction-page/fab-introduction-page.component').then(m => m.FabIntroductionPageComponent)
     },
     {
+        path: 'components/card',
+        loadComponent: () => import('../components/components/card-introduction-page/card-introduction-page.component').then(m => m.CardIntroductionPageComponent)
+    },
+    {
         path: '**',
         redirectTo: 'showcase'
     },

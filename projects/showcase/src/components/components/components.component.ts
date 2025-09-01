@@ -38,6 +38,10 @@ export class ComponentsComponent {
     this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/fab`]);
   }
 
+  public redirectToCardIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/card`]);
+  }
+
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }

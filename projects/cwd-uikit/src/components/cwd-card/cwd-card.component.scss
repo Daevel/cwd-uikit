@@ -11,8 +11,8 @@
   border: 3px solid $card-primary-border;
   box-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.13);
   transition: box-shadow 0.2s, transform 0.2s;
-  margin: 1em 0;
-  padding: 1rem;
+  margin: 1.5em 0;
+  padding: 1.2rem;
   font-size: 1rem;
 
   /* ---------- Color Variants ---------- */
@@ -24,7 +24,7 @@
 
   &.cwd-card--secondary {
     background-color: $card-secondary-bg;
-    border-color: $card-secondary-border;
+    border-color: $card-primary-border;
     color: $card-secondary-text;
   }
 
@@ -36,27 +36,24 @@
 
   &.cwd-card--danger {
     background-color: $card-danger-bg;
-    border-color: $card-danger-border;
+    border-color: $card-primary-border;
     color: $card-danger-text;
   }
 
   /* ---------- Size Variants ---------- */
   &.cwd-card--small {
-    padding: 0.5rem;
     font-size: 0.875rem;
     max-width: 300px;
   }
 
   &.cwd-card--medium {
-    padding: 1rem;
     font-size: 1rem;
-    max-width: 400px;
+    max-width: 500px;
   }
 
   &.cwd-card--big {
-    padding: 1.5rem;
     font-size: 1.125rem;
-    max-width: 600px;
+    max-width: 800px;
   }
 
   &:hover {
@@ -77,16 +74,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em; // margine maggiore tra header e body
 }
 
 .card-body {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em; // margine maggiore tra body e footer
 }
 
 .card-footer {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1.5em; // margine superiore per più respiro
 
   > [card-footer] {
     display: flex;

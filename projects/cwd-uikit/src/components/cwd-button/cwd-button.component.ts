@@ -19,7 +19,12 @@ import { NgClass } from '@angular/common';
       <ng-content></ng-content>
 
     @if (badgeValue()) {
-    <cwd-badge [value]="badgeValue()" [position]="badgePosition()"></cwd-badge>
+    <cwd-badge 
+      [value]="badgeValue()" 
+      [position]="badgePosition()" 
+      [color]="color()"
+      [variant]="position()"
+      [disabled]="disabled()"></cwd-badge>
     }
   </button>
   `,

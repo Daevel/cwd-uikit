@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, input, output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CwdIconComponent } from '../cwd-icon/cwd-icon.component';
 import { NgClass } from '@angular/common';
@@ -9,25 +9,43 @@ import { CwdBadgeComponent } from '../cwd-badge/cwd-badge.component';
   standalone: true,
   imports: [FontAwesomeModule, CwdIconComponent, CwdBadgeComponent, NgClass],
   template: `
-    <button class="cwd-fab" [ngClass]="size" (click)="onClick($event)">
-      @if(iconName) {
-        <cwd-icon [iconName]="iconName"></cwd-icon>
-      }
-      @if (badgeValue !== undefined) {
-        <cwd-badge [value]="badgeValue" [position]="badgePosition"></cwd-badge>
-      }
-    </button>
+    <button 
+  [ngClass]="[position(), color(), size()]" 
+  [disabled]="disabled()" 
+  class="cwd-fab" 
+  (click)="onClick($event)"
+>
+  @if(iconName()) {
+    <cwd-icon [iconName]="iconName()"></cwd-icon>
+  }
+  @if (badgeValue()) {
+    <cwd-badge 
+      [value]="badgeValue()" 
+      [position]="badgePosition()" 
+      [color]="color()"
+      [variant]="position()"
+      [disabled]="disabled()"
+    ></cwd-badge>
+  }
+</button>
+
   `,
   styleUrls: ['./cwd-fab.component.scss']
 })
 export class CwdFabComponent {
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
-  @Input() iconName?: string;
 
-  @Input() badgeValue?: number | string;
-  @Input() badgePosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'top-right';
+  size = input<'small' | 'medium' | 'large'>('medium');
+  iconName = input<string | undefined>('');
 
-  @Output() fabClick = new EventEmitter<MouseEvent>();
+  color = input<'primary' | 'secondary' | 'warn' | 'danger'>('primary');
+  position = input<'text' | 'outlined' | 'filled' | 'default'>('filled');
+
+  disabled = input<boolean>(false);
+
+  badgeValue = input<number | string>(0);
+  badgePosition = input<'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'>('top-right');
+
+  fabClick = output<MouseEvent>();
 
   onClick(event: MouseEvent) {
     this.fabClick.emit(event);

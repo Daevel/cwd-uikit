@@ -1,35 +1,32 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, HostBinding, input } from '@angular/core';
 
 @Component({
   selector: 'cwd-badge',
   standalone: true,
   imports: [CommonModule],
   template: `
-  <span class="badge-content"
-      [ngStyle]="{ 'background-color': color, 'color': textColor }">
-  <ng-container *ngIf="!dot">{{ value }}</ng-container>
-  </span>
+    <span class="badge-content">
+      <ng-container *ngIf="!dot()">{{ value() }}</ng-container>
+    </span>
   `,
   styleUrls: ['./cwd-badge.component.scss']
 })
 export class CwdBadgeComponent {
-  /** Testo o numero nel badge */
-  @Input() value: string | number = '';
+  value = input<string | number>('');
+  position = input<'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'>('top-right');
+  color = input<'primary' | 'secondary' | 'warn' | 'danger'>('primary');
+  variant = input<'text' | 'outlined' | 'filled' | 'default'>('filled');
+  disabled = input<boolean>(false);
+  dot = input<boolean>(false);
 
-  /** Posizione del badge */
-  @Input() position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'top-right';
+  @HostBinding('class')
+  get hostClasses() {
+    return `cwd-badge ${this.position()} ${this.color()} ${this.variant()} ${this.dot() ? 'dot' : ''}`;
+  }
 
-  /** Colore sfondo */
-  @Input() color: string = '#e53935';
-
-  /** Colore testo */
-  @Input() textColor: string = '#fff';
-
-  /** Modalità "dot" → solo pallino senza numero */
-  @Input() dot: boolean = false;
-
-  @HostBinding('class') get hostClasses() {
-    return `cwd-badge ${this.position} ${this.dot ? 'dot' : ''}`;
+  @HostBinding('class.disabled')
+  get isDisabled() {
+    return this.disabled();
   }
 }

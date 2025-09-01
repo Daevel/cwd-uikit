@@ -11,7 +11,7 @@ import { CwdFabComponent } from '../../public-api';
       <ng-content></ng-content>
     </span>
       @if(removable) {
-        <cwd-fab size="small" iconName="faXmark" (fabClick)="onRemove($event)"></cwd-fab>
+        <cwd-fab [size]="'small'" [iconName]="'faXmark'" (fabClick)="onRemove($event)"></cwd-fab>
       }
   </span>
   }

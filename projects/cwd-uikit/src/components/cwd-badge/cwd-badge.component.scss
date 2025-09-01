@@ -1,47 +1,159 @@
+@import "../../styles";
+
 :host {
-  position: absolute; /* 👈 ora si posiziona rispetto al button */
+  display: inline-flex;
+  position: absolute;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-heavy;
+  line-height: 1;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 2px $color-surface;
 }
 
+/* ---------- Base Content ---------- */
 .badge-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 9999px;
-  line-height: 1;
-  box-shadow: 0 0 0 2px #fff;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.4rem;
+  border-radius: inherit;
 }
 
-/* Dot mode */
+/* ---------- Dot Mode ---------- */
 :host(.dot) .badge-content {
-  min-width: 10px;
-  height: 10px;
+  min-width: 0.625rem;
+  height: 0.625rem;
   padding: 0;
 }
 
-/* Posizioni */
+/* ---------- Style Variants ---------- */
+:host(.text) .badge-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+:host(.outlined) .badge-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+:host(.filled) .badge-content {
+  border: none;
+}
+
+:host(.default) .badge-content {
+  background: $card-neutral-bg;
+  color: $card-neutral-text;
+  border: 2px solid $card-neutral-border;
+}
+
+/* ---------- Color + Variant ---------- */
+/* Text */
+:host(.primary.text) .badge-content {
+  color: $color-primary;
+  background: white;
+  box-shadow: 0 0 0 2px $color-primary;
+}
+:host(.secondary.text) .badge-content {
+  color: $color-secondary;
+  background: white;
+  box-shadow: 0 0 0 2px $color-secondary;
+}
+:host(.warn.text) .badge-content {
+  color: $color-warn;
+  background: white;
+  box-shadow: 0 0 0 2px $color-warn;
+}
+:host(.danger.text) .badge-content {
+  color: $color-danger;
+  background: white;
+  box-shadow: 0 0 0 2px $color-danger;
+}
+
+/* Filled */
+:host(.primary.filled) .badge-content {
+  background: $color-primary;
+  color: $color-primary-contrast;
+  box-shadow: 0 0 0 2px $color-primary-contrast;
+}
+:host(.secondary.filled) .badge-content {
+  background: $color-secondary;
+  color: $card-secondary-text;
+  box-shadow: 0 0 0 2px $color-primary-contrast;
+}
+:host(.warn.filled) .badge-content {
+  background: $color-warn;
+  color: $card-warn-text;
+  box-shadow: 0 0 0 2px $color-primary-contrast;
+}
+:host(.danger.filled) .badge-content {
+  background: $card-danger-bg;
+  color: $card-danger-text;
+  box-shadow: 0 0 0 2px $color-primary-contrast;
+}
+
+/* Outlined */
+:host(.primary.outlined) .badge-content {
+  color: $color-primary;
+  background: white;
+  box-shadow: 0 0 0 2px $color-primary;
+}
+:host(.secondary.outlined) .badge-content {
+  color: $color-secondary;
+  background: white;
+  box-shadow: 0 0 0 2px $color-secondary;
+}
+:host(.warn.outlined) .badge-content {
+  color: $color-warn;
+  background: white;
+  box-shadow: 0 0 0 2px $color-warn;
+}
+:host(.danger.outlined) .badge-content {
+  color: $color-danger;
+  background: white;
+  box-shadow: 0 0 0 2px $color-danger;
+}
+
+/* ---------- Disabled Variants ---------- */
+:host(.disabled) .badge-content {
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  background-color: $color-surface;
+  color: $color-disabled;
+  border: none;
+  box-shadow: none;
+}
+
+:host(.disabled.text) .badge-content,
+:host(.disabled.filled) .badge-content,
+:host(.disabled.outlined) .badge-content {
+  color: $color-disabled !important;
+  background-color: $color-border !important;
+  box-shadow: 0 0 0 2px $color-border !important;
+}
+
+/* ---------- Position Variants ---------- */
 :host(.top-right) {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
 }
-
 :host(.top-left) {
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
 }
-
 :host(.bottom-right) {
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
 }
-
 :host(.bottom-left) {
   bottom: 0;
   left: 0;

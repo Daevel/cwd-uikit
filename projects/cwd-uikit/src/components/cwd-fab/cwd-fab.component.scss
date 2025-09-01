@@ -1,4 +1,4 @@
-@import '../../styles';
+@import "../../styles";
 
 .cwd-fab {
   position: relative;
@@ -12,10 +12,174 @@
   transition: transform 0.1s ease, box-shadow 0.15s ease;
   box-shadow: 0 4px 8px rgba($color-primary-contrast, 0.4);
 
+  /* ---------- Disable Variants ---------- */
+  &.disabled,
+  &:disabled {
+    background-color: $color-surface !important; 
+    color: $color-disabled !important;
+    border-color: $color-border !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    pointer-events: none;
+    transform: none !important;
+  }
+
+  /* ---------- Text Style ---------- */
+  &.text {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      text-decoration: underline;
+      transform: none;
+      box-shadow: none;
+    }
+
+    &.primary {
+      color: $color-primary;
+    }
+
+    &.secondary {
+      color: $color-secondary;
+    }
+
+    &.warn {
+      color: $color-warn;
+    }
+
+    &.danger {
+      color: $color-danger;
+    }
+  }
+
+  /* ---------- Filled Style ---------- */
+  &.filled {
+    &.filled.primary {
+      background: $card-primary-bg;
+      color: $color-primary-contrast;
+    }
+    &.filled.secondary {
+      background: $card-secondary-bg;
+      color: $color-secondary-contrast;
+    }
+    &.filled.warn {
+      background: $card-warn-bg;
+      color: $color-warn-contrast;
+    }
+    &.filled.danger {
+      background: $card-danger-bg;
+      color: $color-danger-contrast;
+    }
+  }
+
+  /* ---------- Outlined Style ---------- */
+  &.outlined {
+    background: transparent;
+    border: 3px solid $color-primary-contrast;
+    color: $color-primary-contrast;
+    box-shadow: none;
+
+    &.outlined.primary {
+      border: 3px solid $color-primary;
+      color: $color-primary;
+    }
+    &.outlined.secondary {
+      border: 3px solid $color-secondary;
+      color: $color-secondary;
+    }
+    &.outlined.warn {
+      border: 3px solid $color-warn;
+      color: $color-warn;
+    }
+    &.outlined.danger {
+      border: 3px solid $color-danger;
+      color: $color-danger;
+    }
+  }
+
+  /* ---------- Color Variants ---------- */
+  &.primary {
+    color: $color-primary-contrast;
+    --btn-color: $color-primary;
+  }
+
+  &.secondary {
+    color: $color-primary-contrast;
+    --btn-color: $color-secondary;
+  }
+
+  &.warn {
+    color: $color-warn-contrast;
+    --btn-color: $color-warn;
+  }
+
+  &.danger {
+    color: $color-danger-contrast;
+    --btn-color: $color-danger;
+  }
+
   &.small {
     width: $fab-small-size;
     height: $fab-small-size;
     font-size: $fab-small-font;
+  }
+
+  /* ---------- Filled overrides ---------- */
+  &.filled.primary {
+    background: $card-primary-bg;
+    color: $card-primary-text;
+  }
+  &.filled.secondary {
+    background: $card-secondary-bg;
+    color: $card-secondary-text;
+  }
+  &.filled.warn {
+    background: $card-warn-bg;
+    color: $card-warn-text;
+  }
+  &.filled.danger {
+    background: $card-danger-bg;
+    color: $card-danger-text;
+  }
+
+  /* ---------- Outlined overrides ---------- */
+  &.outlined.primary {
+    color: $card-primary-text;
+  }
+  &.outlined.secondary {
+    color: $card-secondary-text;
+  }
+  &.outlined.warn {
+    color: $card-warn-text;
+  }
+  &.outlined.danger {
+    color: $card-danger-text;
+  }
+
+  /* ---------- Disabled overrides ---------- */
+  &.disabled.filled,
+  &.disabled.outlined,
+  &.disabled.text,
+  &.disabled.primary,
+  &.disabled.secondary,
+  &.disabled.warn,
+  &.disabled.danger {
+    background-color: $color-surface !important;
+    color: $color-disabled !important;
+    border-color: $color-border !important;
+    box-shadow: none !important;
+  }
+
+  /* ---------- Interaction States ---------- */
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.1);
   }
 
   &.medium {
