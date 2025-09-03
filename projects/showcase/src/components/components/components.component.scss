@@ -1,14 +1,35 @@
 .components-container {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .exposing-card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 colonne uguali
+  grid-auto-rows: auto;
+  gap: 1.5rem; // spaziatura tra le card
+  margin-top: 2rem;
+}
+
+/* Se vuoi renderla responsiva */
+@media (max-width: 1024px) {
+  .components-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .components-grid {
+    grid-template-columns: 1fr;
+  }
 }

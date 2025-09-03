@@ -42,6 +42,18 @@ export class ComponentsComponent {
     this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/card`]);
   }
 
+  public redirectToCheckboxIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/checkbox`]);
+  }
+
+  public redirectToLoadingIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/loader`]);
+  }
+
+  public redirectToTooltipIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/tooltip`]);
+  }
+
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }

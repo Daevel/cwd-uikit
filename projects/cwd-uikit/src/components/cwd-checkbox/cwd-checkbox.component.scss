@@ -1,8 +1,12 @@
 @import "../../styles.scss";
 
+:host {
+  display: inline-flex;
+  margin: 0.2em;
+}
+
 .container {
   $input-out-of-focus: #fffbe6;
-  $bg-color-alt: #666;
   position: relative;
   cursor: pointer;
   display: inline-flex;
@@ -15,44 +19,33 @@
     opacity: 0;
   }
 
+  /* ---------- Checkmark ---------- */
   .checkmark {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     position: relative;
-    margin-right: 0.5rem;
-    top: 0;
-    left: 0;
-    border: 3px solid $color-text;
-    border-radius: 5px;
-    box-shadow: 0.1em 0.1em;
+    border: 2px solid $color-text;
+    border-radius: 4px;
     background-color: $input-out-of-focus;
+    box-shadow: 0.1em 0.1em;
     transition: all 0.3s ease;
   }
 
   input:checked ~ .checkmark {
     background-color: $color-primary;
-  }
-
-  .checkmark:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em;
-  }
-
-  .checkmark:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
+    border-color: $color-primary;
   }
 
   .checkmark:after {
     content: "";
-    width: 7px;
-    height: 15px;
+    width: 6px;
+    height: 12px;
     position: absolute;
     top: 2px;
-    left: 8px;
+    left: 6px;
     display: none;
     border: solid $color-text;
-    border-width: 0 2.5px 2.5px 0;
+    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
 
@@ -60,9 +53,108 @@
     display: block;
   }
 
+  /* ---------- Label ---------- */
   .label-text {
     font-size: 1rem;
     color: $color-text;
     font-weight: 500;
+  }
+
+  /* ---------- Interaction States ---------- */
+  &:hover .checkmark {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+
+  &:active .checkmark {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+
+  /* ---------- Disabled ---------- */
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+
+    .checkmark {
+      background-color: $color-surface;
+      border-color: $color-border;
+      box-shadow: none;
+    }
+
+    .label-text {
+      color: $color-disabled;
+    }
+  }
+
+  /* ---------- Color Variants ---------- */
+  &.primary {
+    .checkmark {
+      border-color: $color-primary;
+    }
+    input:checked ~ .checkmark {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+    input:checked ~ .checkmark:after {
+      border-color: $color-primary-contrast;
+    }
+  }
+
+  &.secondary {
+    .checkmark {
+      border-color: $color-secondary;
+    }
+    input:checked ~ .checkmark {
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+    }
+    input:checked ~ .checkmark:after {
+      border-color: $color-secondary-contrast;
+    }
+  }
+
+  &.warn {
+    .checkmark {
+      border-color: $color-warn;
+    }
+    input:checked ~ .checkmark {
+      background-color: $color-warn;
+      border-color: $color-warn;
+    }
+    input:checked ~ .checkmark:after {
+      border-color: $color-warn-contrast;
+    }
+  }
+
+  &.danger {
+    .checkmark {
+      border-color: $color-danger;
+    }
+    input:checked ~ .checkmark {
+      background-color: $color-danger;
+      border-color: $color-danger;
+    }
+    input:checked ~ .checkmark:after {
+      border-color: $color-danger-contrast;
+    }
+  }
+
+  /* ---------- Position Variants ---------- */
+  &.left {
+    flex-direction: row-reverse;
+    .checkmark {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+  }
+
+  &.right {
+    flex-direction: row;
+    .checkmark {
+      margin-right: 0.5rem;
+      margin-left: 0;
+    }
   }
 }

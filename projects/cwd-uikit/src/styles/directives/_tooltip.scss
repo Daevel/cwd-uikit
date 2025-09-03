@@ -1,0 +1,58 @@
+.cwd-tooltip-bubble {
+  position: absolute;
+  font-size: 0.875rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.cwd-tooltip-bubble.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Freccia */
+.cwd-tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+}
+
+.cwd-tooltip-top::after {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: #333 transparent transparent transparent;
+}
+
+.cwd-tooltip-bottom::after {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #333 transparent;
+}
+
+.cwd-tooltip-left::after {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #333;
+}
+
+.cwd-tooltip-right::after {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-color: transparent #333 transparent transparent;
+}

@@ -1,4 +1,4 @@
-import { Component, Input, signal, WritableSignal } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CwdCheckboxComponent } from '../cwd-checkbox/cwd-checkbox.component';
 
@@ -11,7 +11,7 @@ import { CwdCheckboxComponent } from '../cwd-checkbox/cwd-checkbox.component';
       <cwd-checkbox
         *ngFor="let item of options"
         [label]="item.label"
-        [checkedSignal]="item.checkedSignal"
+        [checked]="item.checked"
       ></cwd-checkbox>
     </div>
   `,
@@ -19,5 +19,5 @@ import { CwdCheckboxComponent } from '../cwd-checkbox/cwd-checkbox.component';
 })
 export class CwdCheckboxGroupComponent {
   // Ora ogni item deve avere una signal
-  @Input() options: { label: string; checkedSignal: WritableSignal<boolean> }[] = [];
+  @Input() options: { label: string; checked: boolean }[] = [];
 }

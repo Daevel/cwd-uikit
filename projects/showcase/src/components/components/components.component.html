@@ -21,7 +21,7 @@
             href="https://m3.material.io/components">Material Design specification</a></p>
 
 
-    <div cwdFlex cwdFlexDirection="row" cwdFlexJustify="space-between" cwdFlexGap="10" cwdFlexWrap="nowrap">
+    <div class="components-grid">
         <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
             [ctaClick]="redirectToButtonIntroductionPage.bind(this)">
             <div class="exposing-card-container">
@@ -44,6 +44,33 @@
             <div class="exposing-card-container">
                 <h5>Card</h5>
                 <p>Card components to display content.
+                </p>
+            </div>
+        </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToCheckboxIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Checkbox</h5>
+                <p>Checkbox components to check content.
+                </p>
+            </div>
+        </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToLoadingIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Loader</h5>
+                <p>Loader components to display loading content.
+                </p>
+            </div>
+        </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToTooltipIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Tooltip</h5>
+                <p>Tooltip directive to display content.
                 </p>
             </div>
         </app-exposing-card>

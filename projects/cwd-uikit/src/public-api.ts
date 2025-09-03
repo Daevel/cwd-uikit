@@ -18,6 +18,7 @@ export * from './components/cwd-slide-toggle/public-api';
 export * from './components/cwd-skeleton/public-api';
 export * from './components/cwd-badge/public-api';
 export * from './components/cwd-modal/public-api';
+export * from './directives/public-api';
 export * from './cwd-uikit.module'
 
 //* Services

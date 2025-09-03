@@ -19,6 +19,7 @@ import { CwdSkeletonComponent } from './components/cwd-skeleton/cwd-skeleton.com
 import { CwdSkeletonTemplateComponent } from './public-api';
 import { CwdBadgeComponent } from './components/cwd-badge/cwd-badge.component';
 import { CwdModalComponent } from './components/cwd-modal/cwd-modal.component';
+import { CwdTooltipDirective } from './directives/cwd-tooltip.directive';
 
 @NgModule({
 imports: [
@@ -40,7 +41,8 @@ imports: [
     CwdSkeletonComponent,
     CwdSkeletonTemplateComponent,
     CwdBadgeComponent,
-    CwdModalComponent
+    CwdModalComponent,
+    CwdTooltipDirective
   ],
   exports: [CwdCardComponent]
 })

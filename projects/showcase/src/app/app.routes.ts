@@ -30,6 +30,18 @@ export const routes: Routes = [
         loadComponent: () => import('../components/components/card-introduction-page/card-introduction-page.component').then(m => m.CardIntroductionPageComponent)
     },
     {
+        path: 'components/checkbox',
+        loadComponent: () => import('../components/components/checkbox-introduction-page/checkbox-introduction-page.component').then(m => m.CheckboxIntroductionPageComponent)
+    },
+    {
+        path: 'components/loader',
+        loadComponent: () => import('../components/components/loader-introduction-page/loader-introduction-page.component').then(m => m.LoaderIntroductionPageComponent)
+    },
+    {
+        path: 'components/tooltip',
+        loadComponent: () => import('../components/components/tooltip-introduction-page/tooltip-introduction-page.component').then(m => m.TooltipIntroductionPageComponent)
+    },
+    {
         path: '**',
         redirectTo: 'showcase'
     },

@@ -1,24 +1,29 @@
-import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'cwd-loader',
-  imports: [NgClass],
+  standalone: true,
+  imports: [CommonModule],
   template: `
-    <div class="loader" [ngClass]="mode">
-      @if(mode === 'determinate') {
-        <div class="bar" [style.width.%]="value"></div>
+    <div class="loader" [ngClass]="[mode(), color(), striped() ? 'striped' : '']">
+      @if(mode() === 'determinate') {
+        <div class="bar" [style.width.%]="value()"></div>
+        @if(showValue()) {
+          <span class="value-label">{{ value() }}%</span>
+        }
       }
-      @else if (mode === 'indeterminate') {
+      @else if(mode() === 'indeterminate') {
         <div class="bar-indeterminate"></div>
-      }  
+      }
     </div>
   `,
-  styleUrl: './cwd-loader.component.scss'
+  styleUrls: ['./cwd-loader.component.scss']
 })
 export class CwdLoaderComponent {
-
-  @Input() mode: 'indeterminate' | 'determinate' = 'indeterminate';
-  @Input() value: number = 0;
-
+  mode = input<'indeterminate' | 'determinate'>('indeterminate');
+  value = input<number>(0);
+  color = input<'primary' | 'secondary' | 'warn' | 'danger'>('primary');
+  striped = input(false);
+  showValue = input(false);
 }
