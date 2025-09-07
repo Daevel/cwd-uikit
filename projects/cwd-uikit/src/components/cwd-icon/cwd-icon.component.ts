@@ -19,7 +19,8 @@ export class CwdIconComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.iconName) {
-      this.iconDef = (icons.fas as any)[this.iconName];
+      this.iconDef = (icons.fas as any)[this.iconName] || (icons.fab as any)[this.iconName];
     }
   }
+
 }

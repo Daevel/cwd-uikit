@@ -1,6 +1,6 @@
 {
   "name": "@daevel/uikit",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "scripts": {
     "prebuild:cwd": "bash ./scripts/generate-icons.sh",
     "build:cwd": "ng build cwd-uikit",
@@ -16,6 +16,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.0.1",
     "@fortawesome/free-solid-svg-icons": "^7.0.0"
   },
   "sideEffects": false

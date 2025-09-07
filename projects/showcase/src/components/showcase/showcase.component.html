@@ -6,13 +6,13 @@
                 <cwd-button (onClick)="redirectToShowcasePage()">Uikit</cwd-button>
             </div>
             <div toolbar-center>
-                <cwd-button (onClick)="redirectToComponentPages()">Components</cwd-button>
+                <cwd-button (onClick)="redirectToComponentPages()" iconName="faWrench">Components</cwd-button>
             </div>
             <div toolbar-center>
-                <cwd-button (onClick)="redirectToGuidesPage()">Guides</cwd-button>
+                <cwd-button (onClick)="redirectToGuidesPage()" iconName="faBook">Guides</cwd-button>
             </div>
             <div toolbar-right>
-                <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faCodeBranch">GitHub</cwd-button>
+                <cwd-button (onClick)="redirectOnGitHubPage()" iconName="faGithub">GitHub</cwd-button>
             </div>
         </cwd-toolbar>
     </div>
@@ -20,7 +20,7 @@
     <div class="welcome-container">
         <h2>CodeWithDaevel Uikit</h2>
         <p>Uikit design made by Daevel for Angular</p>
-        <cwd-button (onClick)="redirectToGettingStartedPage()">Get started</cwd-button>
+        <cwd-button (onClick)="redirectToGettingStartedPage()" iconName="faPlay">Get started</cwd-button>
     </div>
     <!--* CARD CONTAINER DESCRIPTION -->
     <div class="card-descriptions">
