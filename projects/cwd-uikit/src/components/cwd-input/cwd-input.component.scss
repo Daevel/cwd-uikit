@@ -1,4 +1,4 @@
-@import '../../styles';
+@import "../../styles";
 
 :host-context([card-body]) {
   display: block;
@@ -16,6 +16,20 @@
   width: 100%;
 }
 
+.cwd-input-wrapper.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+
+  input {
+    background: #f2f2f2;
+    border-color: #ccc;
+    box-shadow: none;
+    color: #888;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
 .cwd-input-label {
   display: flex;
   flex-direction: column;
@@ -30,7 +44,7 @@
 .cwd-input-hint {
   opacity: 0;
   max-height: 0;
-  font-family: $font-family-base;;
+  font-family: $font-family-base;
   font-size: $font-size-hint;
   transform: translateY(-4px);
   transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
@@ -44,7 +58,6 @@
   transform: translateY(0);
   pointer-events: auto;
 }
-
 
 input[type="text"],
 input[type="email"],
@@ -81,4 +94,3 @@ input[type="number"]:focus {
   background: #fff8d1;
   transform: translate(0.05em, 0.05em);
 }
-

@@ -16,6 +16,7 @@ export class CwdInputComponent {
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
   @Input() model: any;
+  @Input() disabled: boolean = false;
   @Output() modelChange = new EventEmitter<any>();
 
   isFocused = false;

@@ -54,6 +54,18 @@ export class ComponentsComponent {
     this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/tooltip`]);
   }
 
+  public redirectToModalIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/modal`]);
+  }
+
+  public redirectToSlideToggleIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/slide-toggle`]);
+  }
+
+  public redirectToInputIntroductionPage() {
+    this.router.navigate([`/${ROUTE_PATHS.COMPONENTS}/input`]);
+  }
+
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }

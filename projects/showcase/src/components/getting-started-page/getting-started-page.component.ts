@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CwdButtonComponent, CwdToolbarComponent } from '../../../../cwd-uikit/src/public-api';
 import { ROUTE_PATHS, EXTERNAL_LINKS } from '../../../@core/const';
 import { Router } from '@angular/router';
@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class GettingStartedPageComponent {
 
-  constructor(private router: Router) { }
-
+  constructor(
+    private router: Router,
+  ) { }
 
   public redirectToShowcasePage() {
     this.router.navigate([`/${ROUTE_PATHS.SHOWCASE}`]);
@@ -33,6 +34,4 @@ export class GettingStartedPageComponent {
   public redirectOnGitHubPage() {
     window.open(EXTERNAL_LINKS.GITHUB, '_blank');
   }
-
-
 }

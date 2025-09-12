@@ -42,6 +42,18 @@ export const routes: Routes = [
         loadComponent: () => import('../components/components/tooltip-introduction-page/tooltip-introduction-page.component').then(m => m.TooltipIntroductionPageComponent)
     },
     {
+        path: 'components/modal',
+        loadComponent: () => import('../components/components/modal-introduction-page/modal-introduction-page.component').then(m => m.ModalIntroductionPageComponent)
+    },
+    {
+        path: 'components/slide-toggle',
+        loadComponent: () => import('../components/components/slide-toggle-introduction-page/slide-toggle-introduction-page.component').then(m => m.SlideToggleIndtroductionPageComponent)
+    },
+    {
+        path: 'components/input',
+        loadComponent: () => import('../components/components/input-introduction-page/input-introduction-page.component').then(m => m.InputIntroductionPageComponent)
+    },
+    {
         path: '**',
         redirectTo: 'showcase'
     },

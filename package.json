@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build:cwd": "ng build cwd-uikit",
+    "full": "ng build cwd-uikit && npm start",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

@@ -75,5 +75,32 @@
             </div>
         </app-exposing-card>
 
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToModalIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Modal</h5>
+                <p>Modal component to display content.
+                </p>
+            </div>
+        </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToSlideToggleIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Slide toggle</h5>
+                <p>Slide toggle component to turn on variables.
+                </p>
+            </div>
+        </app-exposing-card>
+
+        <app-exposing-card [imageSrc]="'assets/button-img.png'" [ctaText]="'Scopri di più'" [ctaIcon]="'faArrowRight'"
+            [ctaClick]="redirectToInputIntroductionPage.bind(this)">
+            <div class="exposing-card-container">
+                <h5>Input</h5>
+                <p>Input component to turn on variables.
+                </p>
+            </div>
+        </app-exposing-card>
+
     </div>
 </div>
