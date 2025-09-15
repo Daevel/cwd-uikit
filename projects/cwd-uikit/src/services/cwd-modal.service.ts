@@ -60,6 +60,7 @@ export class CwdModalService {
     private injector: EnvironmentInjector
   ) { }
 
+  // Nel CwdModalService
   open<T extends object, D = any, R = any>(
     componentOrTemplateRef: Type<T>,
     config: ModalConfig = {}
@@ -76,9 +77,8 @@ export class CwdModalService {
       elementInjector: Injector.create({ providers: [], parent: this.injector })
     });
 
-    if (config.data) {
-      contentComponentRef.setInput('data', config.data);
-    }
+    // 🔥 AGGIUNGI QUESTA RIGA
+    this.appRef.attachView(contentComponentRef.hostView);
 
     const modalBody = modalComponentRef.location.nativeElement.querySelector('.cwd-modal-body');
     if (modalBody) {
@@ -97,7 +97,10 @@ export class CwdModalService {
   }
 
   private closeModal(modalComponentRef: ComponentRef<CwdModalComponent>, contentComponentRef: ComponentRef<any>) {
+    // 🔥 DETACH ANCHE IL CONTENT COMPONENT
+    this.appRef.detachView(contentComponentRef.hostView);
     this.appRef.detachView(modalComponentRef.hostView);
+
     contentComponentRef.destroy();
     modalComponentRef.destroy();
     this.modals = this.modals.filter(m => m !== modalComponentRef);

@@ -1,39 +1,56 @@
-import { Component, EventEmitter, Input, Output, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  input,
+  output,
+  signal,
+  WritableSignal
+} from '@angular/core';
 import { CwdFabComponent } from '../../public-api';
 
 @Component({
   selector: 'cwd-chip',
+  standalone: true,
   imports: [CwdFabComponent],
   template: `
   @if(visible()) {
-  <span class="chip" [class.selected]="selected()" (click)="toggleSelect()">
-    <span class="chip-text">
-      <ng-content></ng-content>
-    </span>
-      @if(removable) {
-        <cwd-fab [size]="'small'" [iconName]="'faXmark'" (fabClick)="onRemove($event)"></cwd-fab>
+    <span class="chip" [class.selected]="selected()" (click)="toggleSelect()">
+      <span class="chip-text">
+        @if(label() !== undefined) {
+          {{ label() }}
+        } @else {
+          <ng-content></ng-content>
+        }
+      </span>
+
+      @if(removable()) {
+        <cwd-fab size="small" iconName="faXmark" (fabClick)="onRemove($event)"></cwd-fab>
       }
-  </span>
+    </span>
   }
-`,
-  styleUrl: './cwd-chip.component.scss'
+  `,
+  styleUrls: ['./cwd-chip.component.scss']
 })
 export class CwdChipComponent {
 
-  @Input() removable = false;    
+  public readonly label = input<string | undefined>(undefined);
+  public readonly removable = input<boolean>(false);
 
-  selected: WritableSignal<boolean> = signal(false);
-  visible: WritableSignal<boolean> = signal(true);
-  removed: WritableSignal<boolean> = signal(false);      
+  public readonly remove = output<void>();
+
+  public readonly selected: WritableSignal<boolean> = signal(false);
+  public readonly visible: WritableSignal<boolean> = signal(true);
+  public readonly removed: WritableSignal<boolean> = signal(false);
 
   toggleSelect() {
     this.selected.update(v => !v);
   }
 
-  onRemove(e: MouseEvent) {
-    e.stopPropagation();
+  onRemove(e?: MouseEvent) {
+    if (e) e.stopPropagation();
+    // nascondi animazione / stato interno
     this.visible.set(false);
-    this.removed.set(true); 
+    this.removed.set(true);
+    // notifica parent
+    this.remove.emit();
   }
-
 }
